@@ -103,3 +103,25 @@ def ledge(face_z, top_y, x0=-7.0, x1=7.0, bottom=-12.0, tile=2.0):
     items = wall_front(face_z, x0, x1, bottom, top_y - 0.12, tile=tile, depth=6.0)
     items.append(("box", ((x0 + x1) / 2, top_y - 0.06, face_z - 3.0 + 0.03), (x1 - x0, 0.12, 6.06), (150, 196, 190)))
     return items
+
+
+def cyc(a, joint_fn, keys, shift=0.0, e="smooth", mirror_side=False):
+    """Key one joint of a looping animation by cycle phase (0..1).
+
+    keys  = [(phase, {params}), ...]; phases may be in any order.
+    shift = phase offset added to every key (0.5 = half a cycle later).
+    Keys are repeated one cycle before and after so interpolation across the
+    loop point (and Catmull-Rom tangents) stay seamless."""
+    L = a.length
+    flip = ("turn", "roll", "x")
+    for ph, p in keys:
+        q = dict(p)
+        if mirror_side:
+            for k in flip:
+                if k in q:
+                    q[k] = -q[k]
+        base = (ph + shift) % 1.0
+        for rep in (-1, 0, 1):
+            t = (base + rep) * L
+            if -0.35 * L <= t <= 1.35 * L:
+                a.k(round(t, 5), joint_fn(**q), e=e)

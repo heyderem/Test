@@ -15,10 +15,12 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+from . import look
 from .core import (Baked, PART_SIZE, PropSpec, baked_transforms_at, cf, inv,
                    pose_parts, rx, ry, rz)
 
 GROUND_Y = -3.0  # HumanoidRootPart centre sits 3 studs above the floor in R6
+SHOW_FX = False  # sparks / dust are off: effects get made in Roblox
 
 # Classic R6 colours
 COL = {
@@ -62,57 +64,18 @@ LIGHT = LIGHT / np.linalg.norm(LIGHT)
 
 
 class Mesh:
+    """Triangle soup with per-vertex colours (see look.TriBatch)."""
+
     def __init__(self):
-        self.tris: List[np.ndarray] = []   # (3,3) world points
-        self.cols: List[Tuple[float, float, float]] = []
+        self.batch = look.TriBatch()
 
     def box(self, m: np.ndarray, size, color, shade=True):
-        size = np.asarray(size, dtype=float)
-        pts = (_CORNERS * size) @ m[:3, :3].T + m[:3, 3]
-        for idx, n in _FACES:
-            nw = m[:3, :3] @ np.array(n, dtype=float)
-            if shade:
-                d = max(0.0, float(nw @ LIGHT))
-                k = 0.52 + 0.55 * d + 0.08 * max(0.0, nw[1])
-            else:
-                k = 1.0
-            c = tuple(min(255.0, ch * k) for ch in color)
-            a, b, cc, dd = (pts[i] for i in idx)
-            self.tris.append(np.array([a, b, cc]))
-            self.cols.append(c)
-            self.tris.append(np.array([a, cc, dd]))
-            self.cols.append(c)
+        look.box(self.batch, m, size, color)
 
     def quad(self, pts, color):
-        a, b, c, d = pts
-        self.tris.append(np.array([a, b, c]))
-        self.cols.append(color)
-        self.tris.append(np.array([a, c, d]))
-        self.cols.append(color)
-
-
-def add_face(mesh: Mesh, head: np.ndarray):
-    """Classic smile on the -Z face of the head."""
-    dark = (25, 25, 25)
-    z = -0.5 - 0.012
-
-    def P(x, y):
-        return (head @ np.array([x, y, z, 1.0]))[:3]
-
-    for ex in (-0.28, 0.28):
-        mesh.quad([P(ex - 0.07, 0.02), P(ex + 0.07, 0.02), P(ex + 0.07, 0.3), P(ex - 0.07, 0.3)], dark)
-    # smile arc
-    n = 9
-    r_out, r_in = 0.42, 0.34
-    cy = 0.12
-    for i in range(n):
-        a0 = math.radians(-155 + i * (130 / n))
-        a1 = math.radians(-155 + (i + 1) * (130 / n))
-        pts = [P(r_out * math.cos(a0), cy + r_out * math.sin(a0) * 0.75),
-               P(r_out * math.cos(a1), cy + r_out * math.sin(a1) * 0.75),
-               P(r_in * math.cos(a1), cy + r_in * math.sin(a1) * 0.75),
-               P(r_in * math.cos(a0), cy + r_in * math.sin(a0) * 0.75)]
-        mesh.quad(pts, dark)
+        c = np.asarray(color, float)
+        a, b, cc, d = pts
+        self.batch.add(np.array([[a, b, cc], [a, cc, d]]), np.tile(c, (2, 3, 1)))
 
 
 # --- preview objects --------------------------------------------------------
@@ -199,10 +162,9 @@ class Camera:
 
 
 def raster(img: np.ndarray, zbuf: np.ndarray, cam: Camera, mesh: Mesh):
-    if not mesh.tris:
+    tris, vcols = mesh.batch.arrays()
+    if len(tris) == 0:
         return
-    tris = np.stack(mesh.tris)  # (N,3,3)
-    cols = np.array(mesh.cols)
     flat = tris.reshape(-1, 3)
     sx, sy, sz = cam.project(flat)
     sx = sx.reshape(-1, 3)
@@ -236,7 +198,12 @@ def raster(img: np.ndarray, zbuf: np.ndarray, cam: Camera, mesh: Mesh):
         if not m.any():
             continue
         sub[m] = z[m]
-        img[miny:maxy + 1, minx:maxx + 1][m] = cols[i]
+        c = vcols[i]
+        if np.ptp(c, axis=0).max() < 0.5:
+            img[miny:maxy + 1, minx:maxx + 1][m] = c[0]
+        else:
+            col = w0[m][:, None] * c[0] + w1[m][:, None] * c[1] + w2[m][:, None] * c[2]
+            img[miny:maxy + 1, minx:maxx + 1][m] = col
 
 
 class Scene:
@@ -472,12 +439,10 @@ def build_mesh(parts, props_world: List[Tuple[str, np.ndarray]], scenery=()):
     shadow_boxes = []
     for m, size, col in scenery:
         mesh.box(m, size, col)
+    look.character(mesh.batch, parts)
     for name in ("Torso", "Head", "Right Arm", "Left Arm", "Right Leg", "Left Leg"):
-        m = parts[name]
-        size = PART_SIZE[name]
-        mesh.box(m, size, COL[name])
-        shadow_boxes.append((m, np.array(size, float)))
-    add_face(mesh, parts["Head"])
+        size = (1.2, 1.2, 1.2) if name == "Head" else PART_SIZE[name]
+        shadow_boxes.append((parts[name], np.array(size, float)))
     for kind, pm in props_world:
         for lm, size, col in prop_boxes(kind):
             wm = pm @ lm
@@ -534,7 +499,7 @@ def render_frame(scenes, cams, parts, props_world, fx_now, w, h, ss, scroll, sce
         img = np.where((ground_px & (sm > 0))[..., None], img * (1 - 0.38 * sm[..., None]), img)
         raster(img, zbuf, cam, mesh)
         im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
-        if fx_now:
+        if fx_now and SHOW_FX:
             ov = Image.new("RGBA", im.size, (0, 0, 0, 0))
             dr = ImageDraw.Draw(ov)
             for kind, pos, age in fx_now:
@@ -723,7 +688,7 @@ def render_gif(b: Baked, out_path: Optional[str], panels: List[dict], panel=(300
         for mt, mn in markers:
             x = 6 + (canvas.width - 12) * (mt / length)
             dr.rectangle([x - 1, y0 - 2, x + 1, y0 + 7], fill=(90, 200, 255))
-        recent = [mn for mt, mn in markers if 0 <= t - mt < 0.16]
+        recent = [mn for mt, mn in markers if 0 <= t - mt < 0.16] if SHOW_FX else []
         if recent:
             txt = recent[-1].upper()
             tw = dr.textlength(txt, font=font_m)

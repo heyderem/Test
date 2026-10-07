@@ -45,13 +45,41 @@ def all_anims():
     return anims
 
 
-_BAKED = {}
+class _LazyBaked(dict):
+    """name -> Baked, baking each animation the first time it is asked for."""
+
+    def __init__(self):
+        super().__init__()
+        self.anims = {a.name: a for a in all_anims()}
+
+    def __missing__(self, name):
+        b = core.bake(self.anims[name])
+        self[name] = b
+        return b
+
+    def keys(self):
+        return self.anims.keys()
+
+    def values(self):
+        return [self[n] for n in self.anims]
+
+    def items(self):
+        return [(n, self[n]) for n in self.anims]
+
+    def __iter__(self):
+        return iter(self.anims)
+
+    def __len__(self):
+        return len(self.anims)
+
+
+_BAKED = None
 
 
 def baked(name=None):
-    if not _BAKED:
-        for a in all_anims():
-            _BAKED[a.name] = core.bake(a)
+    global _BAKED
+    if _BAKED is None:
+        _BAKED = _LazyBaked()
     return _BAKED if name is None else _BAKED[name]
 
 

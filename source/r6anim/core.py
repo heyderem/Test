@@ -387,9 +387,15 @@ class Anim:
     markers: List[Tuple[float, str]] = field(default_factory=list)
     fn: Optional[Callable[[float], List[Tuple[str, dict]]]] = None
     fps: int = 30
+    overlap: Optional["Overlap"] = None     # secondary motion (None = default settings)
+    grounded: bool = True                  # keep feet out of the floor
+    floor: float = -3.0
+    foot_mode: str = "fwd"                 # how sinking legs are fixed: angle 'fwd' or splay 'out'
+    _proc: Optional[tuple] = None
 
     # -- authoring ----------------------------------------------------------
     def k(self, t: float, *specs, e: Optional[str] = None):
+        self._proc = None
         ease = e or self.default_ease
         assert ease in EASES, ease
         for j, p in specs:
@@ -471,13 +477,48 @@ class Anim:
         h11 = a3 - a2
         return h00 * v0 + h10 * m0 + h01 * v1 + h11 * m1
 
-    def params_at(self, t: float) -> Dict[str, Dict[str, float]]:
+    def raw_params_at(self, t: float) -> Dict[str, Dict[str, float]]:
         if self.fn is not None:
-            return {j: dict(p) for j, p in self.fn(t)}
+            out = {j: dict(p) for j, p in self.fn(t)}
+            for j, p in out.items():
+                for name in params_for(j):
+                    p.setdefault(name, DEFAULTS.get(name, 0.0))
+            return out
         out = {}
         for j, keys in self.keys.items():
             out[j] = {name: self._eval_track(keys, t, name) for name in params_for(j)}
         return out
+
+    def process(self):
+        from .secondary import Overlap, apply_overlap, fix_feet
+        dt = 1.0 / 120
+        n = max(2, int(round(self.length / dt)))
+        ts = np.linspace(0.0, self.length, n + 1)
+        raw = [self.raw_params_at(float(t)) for t in ts]
+        tracks = {j: {k: np.array([r[j][k] for r in raw], float) for k in raw[0][j]} for j in raw[0]}
+        ov = self.overlap if self.overlap is not None else Overlap()
+        apply_overlap(tracks, dt, ov, self.loop)
+        self.foot_fix_amount = 0.0
+        if self.grounded:
+            self.foot_fix_amount = fix_feet(tracks, self.floor, self.world_legs, self.foot_mode)
+        if self.loop:
+            for j in tracks:
+                for k, x in tracks[j].items():
+                    m = (x[0] + x[-1]) / 2
+                    x[0] = x[-1] = m
+        self._proc = (ts, tracks)
+
+    def params_at(self, t: float) -> Dict[str, Dict[str, float]]:
+        if self._proc is None:
+            self.process()
+        ts, tracks = self._proc
+        if self.loop and self.length > 0:
+            t = t % self.length if t != self.length else t
+        t = min(max(t, 0.0), self.length)
+        f = t / (ts[1] - ts[0])
+        i = min(int(f), len(ts) - 2)
+        a = f - i
+        return {j: {k: float(x[i] + (x[i + 1] - x[i]) * a) for k, x in tr.items()} for j, tr in tracks.items()}
 
     def transforms_at(self, t: float) -> Dict[str, np.ndarray]:
         pr = self.params_at(t)
