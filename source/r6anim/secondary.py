@@ -115,54 +115,28 @@ def _leg_lowest(pr_t: Dict[str, Dict[str, float]], leg: str, world_legs: bool) -
     return float(pts[:, 1].min())
 
 
-def fix_feet(tracks: Dict[str, Dict[str, np.ndarray]], floor: float, world_legs: bool, mode: str = "fwd",
+def fix_feet(tracks: Dict[str, Dict[str, np.ndarray]], floor: float, world_legs: bool, mode: str = "lift",
              tol: float = 0.02) -> float:
-    """Returns the largest correction applied (degrees) for reporting."""
+    """Keep feet out of the floor by raising the whole body (never by bending
+    the legs outward - that turned stances into splayed lunges).  The lift is
+    widened and smoothed so it eases in and out.  Returns the largest lift in
+    studs * 30 (for reporting)."""
     if "torso" not in tracks or "rl" not in tracks or "ll" not in tracks:
         return 0.0
     n = len(tracks["torso"]["pitch"])
-    worst = 0.0
     raises = np.zeros(n)
-    default_sign = {"rl": 1.0, "ll": -1.0} if mode == "fwd" else {"rl": 1.0, "ll": 1.0}
-    key = "fwd" if mode == "fwd" else "out"
     for i in range(n):
         pr = {j: {k: float(v[i]) for k, v in tracks[j].items()} for j in ("torso", "rl", "ll")}
-        raise_y = 0.0
-        for leg in ("rl", "ll"):
-            low = _leg_lowest(pr, leg, world_legs)
-            pen = floor - tol - low
-            if pen <= 0:
-                continue
-            cur = pr[leg][key]
-            mag = abs(cur)
-            sign = math.copysign(1.0, cur) if mag > 1e-6 else default_sign[leg]
-            w = min(1.0, max(0.0, (mag - 3.0) / 6.0))   # near-vertical legs: lift the torso instead
-            if w > 0:
-                lo, hi = 0.0, 70.0
-                base = dict(pr[leg])
-                for _ in range(16):
-                    mid = (lo + hi) / 2
-                    pr[leg] = dict(base, **{key: cur + sign * mid})
-                    if _leg_lowest(pr, leg, world_legs) < floor - tol:
-                        lo = mid
-                    else:
-                        hi = mid
-                delta = hi * w
-                pr[leg] = dict(base, **{key: cur + sign * delta})
-                tracks[leg][key][i] = cur + sign * delta
-                worst = max(worst, delta)
-            low = _leg_lowest(pr, leg, world_legs)
-            raise_y = max(raise_y, floor - tol - low)
-        raises[i] = max(raise_y, 0.0)
-    if raises.any():
-        # widen then smooth so the lift eases in and out instead of popping
-        k = 6
-        wide = np.array([raises[max(0, i - k):i + k + 1].max() for i in range(n)])
-        ker = np.exp(-0.5 * (np.arange(-2 * k, 2 * k + 1) / (k * 0.6)) ** 2)
-        ker /= ker.sum()
-        pad = np.pad(wide, 2 * k, mode="edge")
-        smooth = np.convolve(pad, ker, mode="same")[2 * k:-2 * k]
-        lift = np.maximum(smooth, raises)
-        tracks["torso"]["y"] += lift
-        worst = max(worst, float(lift.max()) * 30)
-    return worst
+        low = min(_leg_lowest(pr, "rl", world_legs), _leg_lowest(pr, "ll", world_legs))
+        raises[i] = max(0.0, floor - tol - low)
+    if not raises.any():
+        return 0.0
+    k = 6
+    wide = np.array([raises[max(0, i - k):i + k + 1].max() for i in range(n)])
+    ker = np.exp(-0.5 * (np.arange(-2 * k, 2 * k + 1) / (k * 0.6)) ** 2)
+    ker /= ker.sum()
+    pad = np.pad(wide, 2 * k, mode="edge")
+    smooth = np.convolve(pad, ker, mode="same")[2 * k:-2 * k]
+    lift = np.maximum(smooth, raises)
+    tracks["torso"]["y"] += lift
+    return float(lift.max()) * 30

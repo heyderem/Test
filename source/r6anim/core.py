@@ -560,8 +560,13 @@ def params_to_transforms(pr: Dict[str, Dict[str, float]], world_legs: bool = Tru
         p = pr[j]
         rb = body_rotation(j, p)
         v = body_offset(j, p)
-        if world_legs and j in ("rl", "ll"):
-            rb = rt.T @ rb
+        if world_legs and j in ("rl", "ll") and "torso" in pr:
+            # legs ignore the torso's forward/back lean (so leaning doesn't swing the legs back) but
+            # follow its twist and sideways tilt, like the hips would - otherwise a tilted chest
+            # looks snapped off at the hips
+            tp = pr["torso"]
+            follow = ry(-tp.get("turn", 0.0)) @ rz(-tp.get("roll", 0.0))
+            rb = rt.T @ follow @ rb
         if fold and j in ("head", "ra", "la"):
             p0 = MOTORS[j].c0[:3, 3]
             rb = rf @ rb
