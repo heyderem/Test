@@ -1,0 +1,638 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="KeyframeSequence" referent="RBX00000001">
+		<Properties>
+			<bool name="Loop">false</bool>
+			<string name="Name">SmallBlockHit</string>
+			<token name="Priority">4</token>
+		</Properties>
+		<Item class="Keyframe" referent="RBX00000002">
+			<Properties>
+				<string name="Name">Impact</string>
+				<float name="Time">0</float>
+			</Properties>
+			<Item class="KeyframeMarker" referent="RBX00000003">
+				<Properties>
+					<string name="Name">Impact</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+			<Item class="Pose" referent="RBX0000000A">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000009">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.024167</X><Y>-0.171958</Y><Z>-0.265192</Z><R00>0.990268</R00><R01>0.137059</R01><R02>-0.024167</R02><R10>-0.139173</R10><R11>0.975224</R11><R12>-0.171958</R12><R20>0</R20><R21>0.173648</R21><R22>0.984808</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX00000004">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.103956</R01><R02>0.010926</R02><R10>0.104528</R10><R11>0.989074</R11><R12>-0.103956</R12><R20>0</R20><R21>0.104528</R21><R22>0.994522</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000005">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>-0.420899</R00><R01>-0.749815</R01><R02>0.510511</R02><R10>0.882334</R10><R11>-0.207785</R11><R12>0.42227</R12><R20>-0.210548</R20><R21>0.628174</R21><R22>0.749044</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000006">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.189476</R00><R01>0.916578</R01><R02>-0.352114</R02><R10>-0.939997</R10><R11>0.272955</R11><R12>0.2047</R12><R20>0.283735</R20><R21>0.292201</R21><R22>0.913298</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000007">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.992693</R00><R01>0.110342</R01><R02>-0.04883</R02><R10>-0.097022</R10><R11>0.970513</R11><R12>0.220662</R12><R20>0.071739</R20><R21>-0.214312</R21><R22>0.974127</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000008">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.873833</R00><R01>0.435623</R01><R02>0.215985</R02><R10>-0.467864</R10><R11>0.874245</R11><R12>0.129613</R12><R20>-0.132361</R20><R21>-0.214312</R21><R22>0.967756</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX0000000B">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.033333</float>
+			</Properties>
+			<Item class="Pose" referent="RBX00000012">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000011">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.011323</X><Y>0.141655</Y><Z>-0.324426</Z><R00>0.990268</R00><R01>0.138712</R01><R02>-0.011323</R02><R10>-0.139173</R10><R11>0.986985</R11><R12>-0.080567</R12><R20>0</R20><R21>0.081359</R21><R22>0.996685</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX0000000C">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104396</R01><R02>-0.005268</R02><R10>0.104528</R10><R11>0.993258</R11><R12>0.050123</R12><R20>0</R20><R21>-0.050399</R21><R22>0.998729</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000000D">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.106667</X><Y>0</Y><Z>0</Z><R00>-0.338745</R00><R01>-0.763342</R01><R02>0.550055</R02><R10>0.896828</R10><R11>-0.085172</R11><R12>0.434103</R12><R20>-0.28452</R20><R21>0.640355</R21><R22>0.713438</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000000E">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.106667</X><Y>0</Y><Z>0</Z><R00>0.292027</R00><R01>0.879626</R01><R02>-0.37547</R02><R10>-0.896286</R10><R11>0.388696</R11><R12>0.21351</R12><R20>0.333752</R20><R21>0.274178</R21><R22>0.901907</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000000F">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.9578</R00><R01>0.287329</R01><R02>-0.007793</R02><R10>-0.277267</R10><R11>0.930729</R11><R12>0.238468</R12><R20>0.075772</R20><R21>-0.226244</R21><R22>0.971119</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000010">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.874041</R00><R01>0.434469</R01><R02>0.21746</R02><R10>-0.468745</R10><R11>0.871809</R11><R12>0.142226</R12><R20>-0.127791</R20><R21>-0.226244</R21><R22>0.965652</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX00000013">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.066667</float>
+			</Properties>
+			<Item class="Pose" referent="RBX0000001A">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000019">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.00994</X><Y>0.175295</Y><Z>-0.33128</Z><R00>0.990268</R00><R01>0.138818</R01><R02>-0.00994</R02><R10>-0.139173</R10><R11>0.987739</R11><R12>-0.070725</R12><R20>0</R20><R21>0.07142</R21><R22>0.997446</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX00000014">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104294</R01><R02>-0.007002</R02><R10>0.104528</R10><R11>0.992288</R11><R12>0.066617</R12><R20>0</R20><R21>-0.066984</R21><R22>0.997754</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000015">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.118089</X><Y>0</Y><Z>0</Z><R00>-0.329883</R00><R01>-0.764118</R01><R02>0.554347</R02><R10>0.897564</R10><R11>-0.07193</R11><R12>0.434977</R12><R20>-0.292499</R20><R21>0.641053</R21><R22>0.709574</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000016">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.118089</X><Y>0</Y><Z>0</Z><R00>0.302702</R00><R01>0.874911</R01><R02>-0.378025</R02><R10>-0.890774</R10><R11>0.400766</R11><R12>0.21426</R12><R20>0.338959</R20><R21>0.271878</R21><R22>0.900661</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000017">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.952104</R00><R01>0.305757</R01><R02>-0.00315</R02><R10>-0.296109</R10><R11>0.924531</R11><R12>0.23992</R12><R20>0.07627</R20><R21>-0.227496</R21><R22>0.970788</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000018">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.874073</R00><R01>0.43436</R01><R02>0.217549</R02><R10>-0.468836</R10><R11>0.871537</R11><R12>0.143582</R12><R20>-0.127235</R20><R21>-0.227496</R21><R22>0.965431</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX0000001B">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.1</float>
+			</Properties>
+			<Item class="Pose" referent="RBX00000022">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000021">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.011646</X><Y>0.133805</Y><Z>-0.322841</Z><R00>0.990268</R00><R01>0.138685</R01><R02>-0.011646</R02><R10>-0.139173</R10><R11>0.986795</R11><R12>-0.082863</R12><R20>0</R20><R21>0.083677</R21><R22>0.996493</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX0000001C">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104415</R01><R02>-0.004863</R02><R10>0.104528</R10><R11>0.993445</R11><R12>0.046271</R12><R20>0</R20><R21>-0.046526</R21><R22>0.998917</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000001D">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.104001</X><Y>0</Y><Z>0</Z><R00>-0.340812</R00><R01>-0.763142</R01><R02>0.549054</R02><R10>0.896633</R10><R11>-0.08826</R11><R12>0.433888</R12><R20>-0.282659</R20><R21>0.640175</R21><R22>0.714339</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000001E">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.104001</X><Y>0</Y><Z>0</Z><R00>0.289527</R00><R01>0.880706</R01><R02>-0.374875</R02><R10>-0.89755</R10><R11>0.385868</R11><R12>0.213329</R12><R20>0.332533</R20><R21>0.274705</R21><R22>0.902197</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000001F">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.959076</R00><R01>0.28301</R01><R02>-0.00887</R02><R10>-0.272854</R10><R11>0.932122</R11><R12>0.238116</R12><R20>0.075657</R20><R21>-0.225951</R21><R22>0.971196</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000020">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.874034</R00><R01>0.434495</R01><R02>0.217438</R02><R10>-0.468723</R10><R11>0.871872</R11><R12>0.141909</R12><R20>-0.127919</R20><R21>-0.225951</R21><R22>0.965703</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX00000023">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.166667</float>
+			</Properties>
+			<Item class="Pose" referent="RBX0000002A">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000029">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.016929</X><Y>0.005092</Y><Z>-0.297602</Z><R00>0.990268</R00><R01>0.13814</R01><R02>-0.016929</R02><R10>-0.139173</R10><R11>0.982914</R11><R12>-0.120457</R12><R20>0</R20><R21>0.121641</R21><R22>0.992574</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX00000024">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104513</R01><R02>0.001784</R02><R10>0.104528</R10><R11>0.994377</R11><R12>-0.016976</R12><R20>0</R20><R21>0.017069</R21><R22>0.999854</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000025">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.060264</X><Y>0</Y><Z>0</Z><R00>-0.374645</R00><R01>-0.758848</R01><R02>0.53272</R02><R10>0.89221</R10><R11>-0.138785</R11><R12>0.429768</R12><R20>-0.252195</R20><R21>0.636308</R21><R22>0.729047</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000026">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.060264</X><Y>0</Y><Z>0</Z><R00>0.248018</R00><R01>0.897287</R01><R02>-0.36519</R02><R10>-0.917041</R10><R11>0.338977</R11><R12>0.210074</R12><R20>0.312288</R20><R21>0.282792</R21><R22>0.906921</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000027">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.977073</R00><R01>0.211287</R01><R02>-0.026191</R02><R10>-0.199675</R10><R11>0.952087</R11><R12>0.231646</R12><R20>0.07388</R20><R21>-0.221105</R21><R22>0.972448</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000028">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.87393</R00><R01>0.43494</R01><R02>0.216962</R02><R10>-0.468366</R10><R11>0.872891</R11><R12>0.136724</R12><R20>-0.129918</R20><R21>-0.221105</R21><R22>0.966558</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX0000002B">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.2</float>
+			</Properties>
+			<Item class="Pose" referent="RBX00000032">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000031">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.018323</X><Y>-0.028936</Y><Z>-0.291166</Z><R00>0.990268</R00><R01>0.137962</R01><R02>-0.018323</R02><R10>-0.139173</R10><R11>0.981648</R11><R12>-0.130377</R12><R20>0</R20><R21>0.131658</R21><R22>0.991295</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX0000002C">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104468</R01><R02>0.003543</R02><R10>0.104528</R10><R11>0.99395</R11><R12>-0.033708</R12><R20>0</R20><R21>0.033894</R21><R22>0.999425</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000002D">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.048692</X><Y>0</Y><Z>0</Z><R00>-0.383565</R00><R01>-0.757393</R01><R02>0.528426</R02><R10>0.890653</R10><R11>-0.152098</R11><R12>0.428491</R12><R20>-0.244164</R20><R21>0.634998</R21><R22>0.732913</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000002E">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.048692</X><Y>0</Y><Z>0</Z><R00>0.236891</R00><R01>0.901313</R01><R02>-0.362653</R02><R10>-0.921802</R10><R11>0.326419</R11><R12>0.209121</R12><R20>0.306861</R20><R21>0.284755</R21><R22>0.908158</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000002F">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.980903</R00><R01>0.192068</R01><R02>-0.030654</R02><R10>-0.180101</R10><R11>0.956448</R11><R12>0.229718</R12><R20>0.073441</R20><R21>-0.219811</R21><R22>0.972774</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000030">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.873907</R00><R01>0.435065</R01><R02>0.216804</R02><R10>-0.468271</R10><R11>0.873156</R11><R12>0.135355</R12><R20>-0.130415</R20><R21>-0.219811</R21><R22>0.966786</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX00000033">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.266667</float>
+			</Properties>
+			<Item class="Pose" referent="RBX0000003A">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000039">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.019584</X><Y>-0.059735</Y><Z>-0.285426</Z><R00>0.990268</R00><R01>0.137788</R01><R02>-0.019584</R02><R10>-0.139173</R10><R11>0.980415</R11><R12>-0.139347</R12><R20>0</R20><R21>0.140717</R21><R22>0.99005</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX00000034">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104402</R01><R02>0.005134</R02><R10>0.104528</R10><R11>0.993321</R11><R12>-0.048851</R12><R20>0</R20><R21>0.04912</R21><R22>0.998793</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000035">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.038214</X><Y>0</Y><Z>0</Z><R00>-0.391628</R00><R01>-0.75596</R01><R02>0.524549</R02><R10>0.889103</R10><R11>-0.164129</R11><R12>0.427268</R12><R20>-0.236904</R20><R21>0.633708</R21><R22>0.736404</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000036">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.038214</X><Y>0</Y><Z>0</Z><R00>0.226767</R00><R01>0.904827</R01><R02>-0.360367</R02><R10>-0.925969</R10><R11>0.314996</R11><R12>0.208226</R12><R20>0.301923</R20><R21>0.28647</R21><R22>0.909273</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000037">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.984031</R00><R01>0.174591</R01><R02>-0.03465</R02><R10>-0.162313</R10><R11>0.960061</R11><R12>0.227898</R12><R20>0.073055</R20><R21>-0.218634</R21><R22>0.973068</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000038">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.873888</R00><R01>0.435181</R01><R02>0.216648</R02><R10>-0.468184</R10><R11>0.873394</R11><R12>0.134117</R12><R20>-0.130854</R20><R21>-0.218634</R21><R22>0.966993</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX0000003B">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.366667</float>
+			</Properties>
+			<Item class="Pose" referent="RBX00000042">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000041">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.023742</X><Y>-0.161529</Y><Z>-0.267028</Z><R00>0.990268</R00><R01>0.137133</R01><R02>-0.023742</R02><R10>-0.139173</R10><R11>0.975752</R11><R12>-0.168933</R12><R20>0</R20><R21>0.170593</R21><R22>0.985342</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX0000003C">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.104011</R01><R02>0.010389</R02><R10>0.104528</R10><R11>0.989598</R11><R12>-0.098842</R12><R20>0</R20><R21>0.099386</R21><R22>0.995049</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000003D">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>-0.003554</X><Y>0</Y><Z>0</Z><R00>-0.418187</R00><R01>-0.750447</R01><R02>0.511809</R02><R10>0.883037</R10><R11>-0.203741</R11><R12>0.42277</R12><R20>-0.21299</R20><R21>0.628744</R21><R22>0.747875</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000003E">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0.003554</X><Y>0</Y><Z>0</Z><R00>0.192967</R00><R01>0.915556</R01><R02>-0.352876</R02><R10>-0.93877</R10><R11>0.276889</R11><R12>0.205045</R12><R20>0.285437</R20><R21>0.291702</R21><R22>0.912927</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX0000003F">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.99207</R00><R01>0.116346</R01><R02>-0.047538</R02><R10>-0.103117</R10><R11>0.969722</R11><R12>0.221373</R12><R20>0.071855</R20><R21>-0.214716</R21><R22>0.97403</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000040">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.873837</R00><R01>0.43558</R01><R02>0.216053</R02><R10>-0.467894</R10><R11>0.874166</R11><R12>0.130031</R12><R20>-0.132227</R20><R21>-0.214716</R21><R22>0.967684</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Keyframe" referent="RBX00000043">
+			<Properties>
+				<string name="Name">Keyframe</string>
+				<float name="Time">0.4</float>
+			</Properties>
+			<Item class="Pose" referent="RBX0000004A">
+				<Properties>
+					<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+					<token name="EasingDirection">0</token>
+					<token name="EasingStyle">0</token>
+					<string name="Name">HumanoidRootPart</string>
+					<float name="Weight">0</float>
+				</Properties>
+				<Item class="Pose" referent="RBX00000049">
+					<Properties>
+						<CoordinateFrame name="CFrame"><X>-0.024167</X><Y>-0.171958</Y><Z>-0.265192</Z><R00>0.990268</R00><R01>0.137059</R01><R02>-0.024167</R02><R10>-0.139173</R10><R11>0.975224</R11><R12>-0.171958</R12><R20>0</R20><R21>0.173648</R21><R22>0.984808</R22></CoordinateFrame>
+						<token name="EasingDirection">0</token>
+						<token name="EasingStyle">0</token>
+						<string name="Name">Torso</string>
+						<float name="Weight">1</float>
+					</Properties>
+					<Item class="Pose" referent="RBX00000044">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.994522</R00><R01>-0.103956</R01><R02>0.010926</R02><R10>0.104528</R10><R11>0.989074</R11><R12>-0.103956</R12><R20>0</R20><R21>0.104528</R21><R22>0.994522</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Head</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000045">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>-0.420899</R00><R01>-0.749815</R01><R02>0.510511</R02><R10>0.882334</R10><R11>-0.207785</R11><R12>0.42227</R12><R20>-0.210548</R20><R21>0.628174</R21><R22>0.749044</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000046">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.189476</R00><R01>0.916578</R01><R02>-0.352114</R02><R10>-0.939997</R10><R11>0.272955</R11><R12>0.2047</R12><R20>0.283735</R20><R21>0.292201</R21><R22>0.913298</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Arm</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000047">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.992693</R00><R01>0.110342</R01><R02>-0.04883</R02><R10>-0.097022</R10><R11>0.970513</R11><R12>0.220662</R12><R20>0.071739</R20><R21>-0.214312</R21><R22>0.974127</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Right Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+					<Item class="Pose" referent="RBX00000048">
+						<Properties>
+							<CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>0</Z><R00>0.873833</R00><R01>0.435623</R01><R02>0.215985</R02><R10>-0.467864</R10><R11>0.874245</R11><R12>0.129613</R12><R20>-0.132361</R20><R21>-0.214312</R21><R22>0.967756</R22></CoordinateFrame>
+							<token name="EasingDirection">0</token>
+							<token name="EasingStyle">0</token>
+							<string name="Name">Left Leg</string>
+							<float name="Weight">1</float>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
+	</Item>
+</roblox>

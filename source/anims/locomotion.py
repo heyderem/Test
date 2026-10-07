@@ -97,8 +97,8 @@ def crouch_walk():
 
 JUMP_AIR = [T(pitch=-4, y=0.05), H(pitch=-8), RA(fwd=30, out=78, twist=10), LA(fwd=24, out=80, twist=10),
             RL(fwd=32, out=5), LL(fwd=-8, out=6)]
-FALL_A = [T(pitch=-6), H(pitch=-12), RA(fwd=34, out=118, twist=12), LA(fwd=22, out=106, twist=8),
-          RL(fwd=20, out=8), LL(fwd=-12, out=10)]
+FALL_A = [T(pitch=-6, roll=-3), H(pitch=-12, roll=3), RA(fwd=40, out=128, twist=12), LA(fwd=14, out=96, twist=8),
+          RL(fwd=26, out=8), LL(fwd=-20, out=12)]
 
 
 def jump():
@@ -117,8 +117,8 @@ def jump():
 def fall():
     a = Anim("Fall", 0.9, loop=True, priority="Movement", default_ease="smooth", category=CAT,
              description="Free-fall: arms raised up and out, legs paddling (video fall pose).")
-    b = [T(pitch=-4), H(pitch=-10), RA(fwd=24, out=108, twist=8), LA(fwd=34, out=120, twist=12),
-         RL(fwd=-10, out=10), LL(fwd=18, out=8)]
+    b = [T(pitch=-2, roll=3), H(pitch=-8, roll=-3), RA(fwd=14, out=96, twist=8), LA(fwd=40, out=128, twist=12),
+         RL(fwd=-20, out=12), LL(fwd=26, out=8)]
     a.k(0.0, *FALL_A)
     a.k(0.45, *b)
     a.close_loop()
@@ -332,7 +332,28 @@ def wall_jump():
     a.preview_ground = -14
     a.preview_scenery = wall_front(-1.75, -7, 7, -14, 8)
     a.preview_root = lambda t: (0.0, 3.2 * smoothstep((t - 0.06) / 0.44) - 0.6 * smoothstep((t - 0.3) / 0.2), 2.6 * smoothstep((t - 0.07) / 0.43))
-    a.preview_panels = [("front_l", None, 0, ""), ("side", None, 0, "")]
+    a.preview_panels = [("back", None, 0, "behind"), ("side", None, 0, "")]
+    return a
+
+
+def vault():
+    a = Anim("Vault", 0.62, priority="Action", category=CAT,
+             description="Speed vault over a waist-high wall: left hand plants, legs swing through to the side "
+                         "(video vault). Move the root up ~1.5 studs and forward while it plays.")
+    a.k(0.0, *RUN_READY, e="io")
+    a.k(0.1, T(pitch=30, turn=-10, roll=-6, y=0.1), H(pitch=-16, turn=8), RA(fwd=60, out=50, twist=10),
+        LA(fwd=70, out=8, twist=-10), RL(fwd=70, out=6), LL(fwd=30, out=10), e="out")
+    a.k(0.22, T(pitch=24, turn=-38, roll=-40, y=0.25), H(pitch=-14, turn=30, roll=26), RA(fwd=40, out=90, twist=14),
+        LA(fwd=58, out=-4, twist=-10, yaw=-10), RL(fwd=86, out=40, yaw=40), LL(fwd=74, out=48, yaw=36), e="io")
+    a.k(0.36, T(pitch=10, turn=-24, roll=-22, y=0.2), H(pitch=-10, turn=18, roll=12), RA(fwd=24, out=86, twist=10),
+        LA(fwd=12, out=40), RL(fwd=40, out=26, yaw=20), LL(fwd=18, out=30, yaw=16), e="io")
+    a.k(0.5, T(pitch=14, y=-0.3), H(pitch=-10), RA(fwd=-24, out=34), LA(fwd=40, out=30), RL(fwd=-20, out=6), LL(fwd=36, out=6))
+    a.k(0.62, *RUN_READY)
+    a.mark(0.1, "Plant")
+    a.mark(0.48, "Land")
+    a.preview_scenery = [("box", (0, -2.0, -1.3), (6.0, 2.0, 1.0), (128, 52, 58))]
+    a.preview_root = lambda t: (0.0, 1.0 * smoothstep(t / 0.2) - 1.0 * smoothstep((t - 0.3) / 0.2), 3.0 - 6.0 * smoothstep(t / 0.55))
+    a.preview_panels = [("front", None, 0, ""), ("side", None, 0, "")]
     return a
 
 
@@ -372,5 +393,5 @@ def hit_heavy():
 def build():
     return [idle(), walk(), sprint(), crouch_idle(), crouch_walk(), jump(), fall(), land(), land_heavy(),
             land_roll(), roll(), slide_start(), slide_loop(), slide_end(), ledge_hang(), ledge_climb(),
-            wall_climb(), _wallrun("WallRunRight", 1), _wallrun("WallRunLeft", -1), wall_jump(),
+            wall_climb(), _wallrun("WallRunRight", 1), _wallrun("WallRunLeft", -1), wall_jump(), vault(),
             hit_react(), hit_heavy()]

@@ -124,6 +124,22 @@ def heavy_punch():
     return a
 
 
+def punch_blocked():
+    a = Anim("PunchBlocked", 0.55, priority="Action3", category=CAT,
+             description="Your punch/kick hits a block: fist knocked back, recoil half-step, guard back up.")
+    a.k(0.0, T(turn=-26, pitch=10, y=-0.24, z=0.2), H(turn=20, pitch=2), RA(fwd=91, out=2, yaw=-6, z=0.4),
+        LA(fwd=80, out=8, yaw=-42, twist=-6), RL(fwd=-26, out=8, twist=34), LL(fwd=22, out=6, twist=-10), e="out")
+    a.k(0.06, T(turn=14, pitch=-14, y=-0.2, z=-0.28), H(turn=-6, pitch=-20, roll=6), RA(fwd=120, out=40, twist=24),
+        LA(fwd=60, out=30, yaw=-20), RL(fwd=-30, out=8), LL(fwd=8, out=8), e="io")
+    a.k(0.22, T(turn=10, pitch=-4, y=-0.24, z=-0.36), H(pitch=-6), RA(fwd=86, out=26, yaw=-10, twist=10),
+        LA(fwd=74, out=16, yaw=-30), RL(fwd=-20, out=8, twist=14), LL(fwd=6, out=8))
+    a.k(0.55, *GUARD)
+    a.mark(0.0, "Blocked")
+    a.fx = [(0.0, "block", "rhand")]
+    a.preview_panels = [("front", None, 0, ""), ("side", None, 0, "")]
+    return a
+
+
 def build():
-    return [punch1(), punch2(), punch3(), punch4(), kick(), heavy_punch(),
+    return [punch1(), punch2(), punch3(), punch4(), kick(), heavy_punch(), punch_blocked(),
             punch1(True), punch2(True), punch3(True)]

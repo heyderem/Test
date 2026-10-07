@@ -1,0 +1,2002 @@
+[
+ {
+  "name": "Idle",
+  "category": "Movement",
+  "length": 2.4,
+  "loop": true,
+  "priority": "Idle",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [],
+  "keyframes": 3,
+  "description": "Relaxed breathing idle, arms hanging slightly away from the body like the video."
+ },
+ {
+  "name": "Walk",
+  "category": "Movement",
+  "length": 0.8,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Footstep"
+   },
+   {
+    "time": 0.4,
+    "name": "Footstep"
+   }
+  ],
+  "keyframes": 19,
+  "description": "Walk cycle (0.8 s). Play speed = WalkSpeed / 16."
+ },
+ {
+  "name": "Sprint",
+  "category": "Movement",
+  "length": 0.56,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.02,
+    "name": "Footstep"
+   },
+   {
+    "time": 0.3,
+    "name": "Footstep"
+   }
+  ],
+  "keyframes": 19,
+  "description": "Big arm-pumping sprint with forward lean (0.56 s cycle). Back arm flares out like the video."
+ },
+ {
+  "name": "CrouchIdle",
+  "category": "Movement",
+  "length": 2.0,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [],
+  "keyframes": 3,
+  "description": "Low crouch, head down, arms hanging forward (video crouch)."
+ },
+ {
+  "name": "CrouchWalk",
+  "category": "Movement",
+  "length": 1.0,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Footstep"
+   },
+   {
+    "time": 0.5,
+    "name": "Footstep"
+   }
+  ],
+  "keyframes": 23,
+  "description": "Crouched waddle (1.0 s cycle). Play speed = crouch WalkSpeed / 8."
+ },
+ {
+  "name": "Jump",
+  "category": "Movement",
+  "length": 0.45,
+  "loop": false,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Jump"
+   }
+  ],
+  "keyframes": 12,
+  "description": "Take-off: arms whip up and out, knee drives up. Holds into Fall."
+ },
+ {
+  "name": "Fall",
+  "category": "Movement",
+  "length": 0.9,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [],
+  "keyframes": 16,
+  "description": "Free-fall: arms raised up and out, legs paddling (video fall pose)."
+ },
+ {
+  "name": "Land",
+  "category": "Movement",
+  "length": 0.42,
+  "loop": false,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Land"
+   }
+  ],
+  "keyframes": 12,
+  "description": "Normal landing: quick knee-dip absorb, arms out for balance."
+ },
+ {
+  "name": "LandHeavy",
+  "category": "Movement",
+  "length": 1.0,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.07,
+    "name": "Impact"
+   }
+  ],
+  "keyframes": 18,
+  "description": "Superhero landing from a big drop: fist to the floor, then rise."
+ },
+ {
+  "name": "LandRoll",
+  "category": "Movement",
+  "length": 0.86,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Land"
+   },
+   {
+    "time": 0.15,
+    "name": "Roll"
+   }
+  ],
+  "keyframes": 27,
+  "description": "Landing from a high fall into a forward roll, then straight into a run (video)."
+ },
+ {
+  "name": "Roll",
+  "category": "Movement",
+  "length": 0.78,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.09,
+    "name": "Roll"
+   },
+   {
+    "time": 0.6,
+    "name": "Recover"
+   }
+  ],
+  "keyframes": 22,
+  "description": "Dodge / forward shoulder roll from the video (arms spread as you come up)."
+ },
+ {
+  "name": "SlideStart",
+  "category": "Movement",
+  "length": 0.26,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.08,
+    "name": "Slide"
+   }
+  ],
+  "keyframes": 10,
+  "description": "Drop from a sprint into the feet-first slide. Chain into Slide (loop)."
+ },
+ {
+  "name": "Slide",
+  "category": "Movement",
+  "length": 0.6,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [],
+  "keyframes": 4,
+  "description": "Feet-first slide hold with a little ground shake (video slide pose)."
+ },
+ {
+  "name": "SlideEnd",
+  "category": "Movement",
+  "length": 0.4,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.12,
+    "name": "Stand"
+   }
+  ],
+  "keyframes": 14,
+  "description": "Pop back up out of the slide into a run."
+ },
+ {
+  "name": "LedgeHang",
+  "category": "Movement",
+  "length": 1.6,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [],
+  "keyframes": 6,
+  "description": "Hanging from a ledge by both hands, legs swaying."
+ },
+ {
+  "name": "LedgeClimb",
+  "category": "Movement",
+  "length": 0.75,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Grab"
+   },
+   {
+    "time": 0.25,
+    "name": "Push"
+   },
+   {
+    "time": 0.55,
+    "name": "Land"
+   }
+  ],
+  "keyframes": 25,
+  "description": "Pull-up and mantle over a ledge; arms fly out wide at the top (video climb). Tween the HumanoidRootPart up/forward ~0.05-0.5 s while it plays."
+ },
+ {
+  "name": "WallClimb",
+  "category": "Movement",
+  "length": 0.48,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Step"
+   },
+   {
+    "time": 0.24,
+    "name": "Step"
+   }
+  ],
+  "keyframes": 15,
+  "description": "Running straight up a wall: alternating high reaches and knee drives (video climb)."
+ },
+ {
+  "name": "WallRunRight",
+  "category": "Movement",
+  "length": 0.5,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Step"
+   },
+   {
+    "time": 0.25,
+    "name": "Step"
+   }
+  ],
+  "keyframes": 17,
+  "description": "Wall run with the wall on the right: body tilts away so the feet press the wall, outer arm pumps wide (video wall run)."
+ },
+ {
+  "name": "WallRunLeft",
+  "category": "Movement",
+  "length": 0.5,
+  "loop": true,
+  "priority": "Movement",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Step"
+   },
+   {
+    "time": 0.25,
+    "name": "Step"
+   }
+  ],
+  "keyframes": 17,
+  "description": "Wall run with the wall on the left: body tilts away so the feet press the wall, outer arm pumps wide (video wall run)."
+ },
+ {
+  "name": "WallJump",
+  "category": "Movement",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.1,
+    "name": "Kick"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Tuck against the wall then explode off it (video wall kick)."
+ },
+ {
+  "name": "Vault",
+  "category": "Movement",
+  "length": 0.62,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.1,
+    "name": "Plant"
+   },
+   {
+    "time": 0.48,
+    "name": "Land"
+   }
+  ],
+  "keyframes": 21,
+  "description": "Speed vault over a waist-high wall: left hand plants, legs swing through to the side (video vault). Move the root up ~1.5 studs and forward while it plays."
+ },
+ {
+  "name": "HitReact",
+  "category": "Hit Reactions",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 13,
+  "description": "Light hit flinch from the video: arms jolt up and out, head snaps back."
+ },
+ {
+  "name": "HitHeavy",
+  "category": "Hit Reactions",
+  "length": 0.9,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Hit"
+   },
+   {
+    "time": 0.26,
+    "name": "Stumble"
+   }
+  ],
+  "keyframes": 21,
+  "description": "Heavy hit: knocked back, stumbling steps, hunched recovery."
+ },
+ {
+  "name": "Punch1",
+  "category": "Combat",
+  "length": 0.36,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Swing"
+   },
+   {
+    "time": 0.11,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 13,
+  "description": "Combo hit 1 - quick lead-hand jab."
+ },
+ {
+  "name": "Punch2",
+  "category": "Combat",
+  "length": 0.42,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.07,
+    "name": "Swing"
+   },
+   {
+    "time": 0.15,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 12,
+  "description": "Combo hit 2 - rear-hand cross with hip turn."
+ },
+ {
+  "name": "Punch3",
+  "category": "Combat",
+  "length": 0.46,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.08,
+    "name": "Swing"
+   },
+   {
+    "time": 0.16,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 14,
+  "description": "Combo hit 3 - wide lead hook."
+ },
+ {
+  "name": "Punch4",
+  "category": "Combat",
+  "length": 0.62,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.13,
+    "name": "Swing"
+   },
+   {
+    "time": 0.22,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 20,
+  "description": "Combo finisher - dipping rising uppercut (launcher)."
+ },
+ {
+  "name": "Kick",
+  "category": "Combat",
+  "length": 0.72,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.13,
+    "name": "Swing"
+   },
+   {
+    "time": 0.26,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 23,
+  "description": "Spinning-hip roundhouse kick."
+ },
+ {
+  "name": "HeavyPunch",
+  "category": "Combat",
+  "length": 1.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Charge"
+   },
+   {
+    "time": 0.38,
+    "name": "Swing"
+   },
+   {
+    "time": 0.48,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 29,
+  "description": "Charged heavy punch: deep wind-up, lunging step, big follow-through."
+ },
+ {
+  "name": "PunchBlocked",
+  "category": "Combat",
+  "length": 0.55,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Blocked"
+   }
+  ],
+  "keyframes": 15,
+  "description": "Your punch/kick hits a block: fist knocked back, recoil half-step, guard back up."
+ },
+ {
+  "name": "Punch1_UB",
+  "category": "Combat",
+  "length": 0.36,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Swing"
+   },
+   {
+    "time": 0.11,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 13,
+  "description": "Upper-body-only version of Punch1: plays on top of Walk/Sprint (legs keep running)."
+ },
+ {
+  "name": "Punch2_UB",
+  "category": "Combat",
+  "length": 0.42,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.07,
+    "name": "Swing"
+   },
+   {
+    "time": 0.15,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 13,
+  "description": "Upper-body-only version of Punch2: plays on top of Walk/Sprint (legs keep running)."
+ },
+ {
+  "name": "Punch3_UB",
+  "category": "Combat",
+  "length": 0.46,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.08,
+    "name": "Swing"
+   },
+   {
+    "time": 0.16,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Upper-body-only version of Punch3: plays on top of Walk/Sprint (legs keep running)."
+ },
+ {
+  "name": "SmallPickup",
+  "category": "Objects/Small",
+  "length": 0.55,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.22,
+    "name": "Grab"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Quick one-hand scoop of a small object."
+ },
+ {
+  "name": "SmallHold",
+  "category": "Objects/Small",
+  "length": 1.6,
+  "loop": true,
+  "priority": "Action",
+  "upperBodyOnly": true,
+  "joints": [
+   "Right Shoulder"
+  ],
+  "markers": [],
+  "keyframes": 4,
+  "description": "Carry a small object in the right hand. Only the right arm is animated, so the other arm keeps swinging with Walk/Sprint."
+ },
+ {
+  "name": "SmallThrow",
+  "category": "Objects/Small",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.02,
+    "name": "Windup"
+   },
+   {
+    "time": 0.2,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Light one-hand flick throw."
+ },
+ {
+  "name": "SmallThrow_UB",
+  "category": "Objects/Small",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.02,
+    "name": "Windup"
+   },
+   {
+    "time": 0.2,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Light one-hand flick throw. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "SmallSwing",
+  "category": "Objects/Small",
+  "length": 0.45,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.1,
+    "name": "Swing"
+   },
+   {
+    "time": 0.18,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Fast overhand smack with a small object."
+ },
+ {
+  "name": "SmallSwing_UB",
+  "category": "Objects/Small",
+  "length": 0.45,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.1,
+    "name": "Swing"
+   },
+   {
+    "time": 0.18,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 16,
+  "description": "Fast overhand smack with a small object. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "SmallSwingBlocked",
+  "category": "Objects/Small",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Blocked"
+   }
+  ],
+  "keyframes": 15,
+  "description": "Small-object hit bounces off a block: arm knocked back, half-step back."
+ },
+ {
+  "name": "SmallBlock",
+  "category": "Objects/Small",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 36,
+  "description": "Forearm guard with the small object across the face; trembles and sags over 4 s."
+ },
+ {
+  "name": "SmallBlock_UB",
+  "category": "Objects/Small",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 43,
+  "description": "Forearm guard with the small object across the face; trembles and sags over 4 s. Upper-body only: plays over Walk/Sprint."
+ },
+ {
+  "name": "SmallBlockBreak",
+  "category": "Objects/Small",
+  "length": 0.72,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.03,
+    "name": "Break"
+   }
+  ],
+  "keyframes": 22,
+  "description": "Guard knocked wide open, stumble back."
+ },
+ {
+  "name": "MediumPickup",
+  "category": "Objects/Medium",
+  "length": 0.8,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.3,
+    "name": "Grab"
+   }
+  ],
+  "keyframes": 22,
+  "description": "Bend, grab the object one-handed and swing it up overhead."
+ },
+ {
+  "name": "MediumHold",
+  "category": "Objects/Medium",
+  "length": 1.6,
+  "loop": true,
+  "priority": "Action",
+  "upperBodyOnly": true,
+  "joints": [
+   "Right Shoulder"
+  ],
+  "markers": [],
+  "keyframes": 4,
+  "description": "Carry a medium object raised one-handed over the shoulder. Only the right arm is animated, so the other arm keeps the Walk/Sprint swing."
+ },
+ {
+  "name": "MediumThrow",
+  "category": "Objects/Medium",
+  "length": 0.86,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.46,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 29,
+  "description": "Pitcher-style one-hand throw: knee lift, big stride, whip release."
+ },
+ {
+  "name": "MediumThrow_UB",
+  "category": "Objects/Medium",
+  "length": 0.86,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.46,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 29,
+  "description": "Pitcher-style one-hand throw: knee lift, big stride, whip release. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "MediumSwing",
+  "category": "Objects/Medium",
+  "length": 0.8,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.27,
+    "name": "Swing"
+   },
+   {
+    "time": 0.36,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 24,
+  "description": "One-handed overhead smash with the object."
+ },
+ {
+  "name": "MediumSwing_UB",
+  "category": "Objects/Medium",
+  "length": 0.8,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.27,
+    "name": "Swing"
+   },
+   {
+    "time": 0.36,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 25,
+  "description": "One-handed overhead smash with the object. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "MediumSwingBlocked",
+  "category": "Objects/Medium",
+  "length": 0.66,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Blocked"
+   }
+  ],
+  "keyframes": 13,
+  "description": "Medium smash slams into a block and rebounds overhead; stagger back."
+ },
+ {
+  "name": "MediumBlock",
+  "category": "Objects/Medium",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 40,
+  "description": "Object held out front as a shield, off-hand bracing; trembles, sags and gets pushed back over 4 s."
+ },
+ {
+  "name": "MediumBlock_UB",
+  "category": "Objects/Medium",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 41,
+  "description": "Object held out front as a shield, off-hand bracing; trembles, sags and gets pushed back over 4 s. Upper-body only: plays over Walk/Sprint."
+ },
+ {
+  "name": "MediumBlockBreak",
+  "category": "Objects/Medium",
+  "length": 0.86,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.03,
+    "name": "Break"
+   }
+  ],
+  "keyframes": 23,
+  "description": "Shield-object knocked up and away, big stumble back."
+ },
+ {
+  "name": "LargePickup",
+  "category": "Objects/Large",
+  "length": 1.1,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.4,
+    "name": "Grab"
+   },
+   {
+    "time": 0.86,
+    "name": "Settle"
+   }
+  ],
+  "keyframes": 29,
+  "description": "Deep squat, grip underneath, explosive two-hand lift to overhead."
+ },
+ {
+  "name": "LargeHold",
+  "category": "Objects/Large",
+  "length": 2.0,
+  "loop": true,
+  "priority": "Action",
+  "upperBodyOnly": true,
+  "joints": [
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [],
+  "keyframes": 10,
+  "description": "Large object held overhead with both arms, straining. Arms only, so legs/torso come from Idle/Walk/Sprint."
+ },
+ {
+  "name": "LargeThrow",
+  "category": "Objects/Large",
+  "length": 1.1,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.55,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 28,
+  "description": "Two-hand overhead heave: arch back, step and launch with full-body follow-through."
+ },
+ {
+  "name": "LargeThrow_UB",
+  "category": "Objects/Large",
+  "length": 1.1,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.55,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 22,
+  "description": "Two-hand overhead heave: arch back, step and launch with full-body follow-through. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "LargeSwing",
+  "category": "Objects/Large",
+  "length": 1.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.36,
+    "name": "Swing"
+   },
+   {
+    "time": 0.5,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 25,
+  "description": "Two-handed overhead slam: rise, arch back, crash it into the ground."
+ },
+ {
+  "name": "LargeSwing_UB",
+  "category": "Objects/Large",
+  "length": 1.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.36,
+    "name": "Swing"
+   },
+   {
+    "time": 0.5,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 24,
+  "description": "Two-handed overhead slam: rise, arch back, crash it into the ground. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "LargeSwingBlocked",
+  "category": "Objects/Large",
+  "length": 0.9,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Blocked"
+   }
+  ],
+  "keyframes": 15,
+  "description": "Slam stopped by a block: object bounces back overhead, heavy stagger."
+ },
+ {
+  "name": "LargeBlock",
+  "category": "Objects/Large",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 35,
+  "description": "Object braced in front as a wall with both arms; pushed back, buckling and shaking over 4 s."
+ },
+ {
+  "name": "LargeBlock_UB",
+  "category": "Objects/Large",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 37,
+  "description": "Object braced in front as a wall with both arms; pushed back, buckling and shaking over 4 s. Upper-body only: plays over Walk/Sprint."
+ },
+ {
+  "name": "LargeBlockBreak",
+  "category": "Objects/Large",
+  "length": 1.1,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.04,
+    "name": "Break"
+   }
+  ],
+  "keyframes": 22,
+  "description": "The weight crushes the guard: buckle down to a knee, then heave back up."
+ },
+ {
+  "name": "HugePickup",
+  "category": "Objects/Huge",
+  "length": 1.5,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.44,
+    "name": "Grab"
+   },
+   {
+    "time": 0.84,
+    "name": "Lift"
+   },
+   {
+    "time": 1.26,
+    "name": "Settle"
+   }
+  ],
+  "keyframes": 38,
+  "description": "Titan lift: squat under it, strain, then explode it up overhead."
+ },
+ {
+  "name": "HugeHold",
+  "category": "Objects/Huge",
+  "length": 2.4,
+  "loop": true,
+  "priority": "Action",
+  "upperBodyOnly": true,
+  "joints": [
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [],
+  "keyframes": 12,
+  "description": "Train/plane balanced overhead, arms wide, slow heavy wobble. Arms only."
+ },
+ {
+  "name": "HugeThrow",
+  "category": "Objects/Huge",
+  "length": 1.6,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.72,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 29,
+  "description": "Deep dip, arch and full-body launch of a vehicle-sized object."
+ },
+ {
+  "name": "HugeThrow_UB",
+  "category": "Objects/Huge",
+  "length": 1.6,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Windup"
+   },
+   {
+    "time": 0.72,
+    "name": "Release"
+   }
+  ],
+  "keyframes": 25,
+  "description": "Deep dip, arch and full-body launch of a vehicle-sized object. Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "HugeSwing",
+  "category": "Objects/Huge",
+  "length": 1.7,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.5,
+    "name": "Swing"
+   },
+   {
+    "time": 0.68,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 40,
+  "description": "Grab it by one end and sweep it like a giant bat (wide horizontal arc)."
+ },
+ {
+  "name": "HugeSwing_UB",
+  "category": "Objects/Huge",
+  "length": 1.7,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.5,
+    "name": "Swing"
+   },
+   {
+    "time": 0.68,
+    "name": "Hit"
+   }
+  ],
+  "keyframes": 52,
+  "description": "Grab it by one end and sweep it like a giant bat (wide horizontal arc). Upper-body only: plays over Walk/Sprint, legs keep running."
+ },
+ {
+  "name": "HugeSwingBlocked",
+  "category": "Objects/Huge",
+  "length": 1.1,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Blocked"
+   }
+  ],
+  "keyframes": 19,
+  "description": "The sweep is stopped dead by a block; the recoil spins you back and you stagger."
+ },
+ {
+  "name": "HugeBlock",
+  "category": "Objects/Huge",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 35,
+  "description": "Vehicle held up in front like a wall, legs wide; driven back and buckling over 4 s."
+ },
+ {
+  "name": "HugeBlock_UB",
+  "category": "Objects/Huge",
+  "length": 4.0,
+  "loop": false,
+  "priority": "Action2",
+  "upperBodyOnly": true,
+  "joints": [
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder"
+  ],
+  "markers": [
+   {
+    "time": 0.16,
+    "name": "Raised"
+   },
+   {
+    "time": 1.6,
+    "name": "Weakening"
+   },
+   {
+    "time": 3.12,
+    "name": "Critical"
+   },
+   {
+    "time": 3.95,
+    "name": "Exhausted"
+   }
+  ],
+  "keyframes": 36,
+  "description": "Vehicle held up in front like a wall, legs wide; driven back and buckling over 4 s. Upper-body only: plays over Walk/Sprint."
+ },
+ {
+  "name": "HugeBlockBreak",
+  "category": "Objects/Huge",
+  "length": 1.4,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.05,
+    "name": "Break"
+   }
+  ],
+  "keyframes": 26,
+  "description": "Crushed under the weight: driven down low, shaking, then a last-second heave back up."
+ },
+ {
+  "name": "SmallBlockHit",
+  "category": "Objects/Small",
+  "length": 0.4,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Impact"
+   }
+  ],
+  "keyframes": 9,
+  "description": "Small block takes a hit: guard jolts back and the feet slide, then re-sets. Play over SmallBlock (it starts and ends in the block pose)."
+ },
+ {
+  "name": "MediumBlockHit",
+  "category": "Objects/Medium",
+  "length": 0.5,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Impact"
+   }
+  ],
+  "keyframes": 9,
+  "description": "Medium block takes a hit: guard jolts back and the feet slide, then re-sets. Play over MediumBlock (it starts and ends in the block pose)."
+ },
+ {
+  "name": "LargeBlockHit",
+  "category": "Objects/Large",
+  "length": 0.6,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Impact"
+   }
+  ],
+  "keyframes": 9,
+  "description": "Large block takes a hit: guard jolts back and the feet slide, then re-sets. Play over LargeBlock (it starts and ends in the block pose)."
+ },
+ {
+  "name": "HugeBlockHit",
+  "category": "Objects/Huge",
+  "length": 0.75,
+  "loop": false,
+  "priority": "Action3",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.0,
+    "name": "Impact"
+   }
+  ],
+  "keyframes": 9,
+  "description": "Huge block takes a hit: guard jolts back and the feet slide, then re-sets. Play over HugeBlock (it starts and ends in the block pose)."
+ }
+]

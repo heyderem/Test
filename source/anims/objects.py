@@ -81,7 +81,7 @@ def _block(name: str, size: str, start: list, strong: list, weak: list, grip: di
     a.mark(0.16, "Raised")
     a.mark(round(length * 0.4, 2), "Weakening")
     a.mark(round(length * 0.78, 2), "Critical")
-    a.mark(length, "Exhausted")
+    a.mark(round(length - 0.05, 2), "Exhausted")
     a.props = [prop(grip)]
     a.preview_panels = FULL_PANELS
     a.preview_hold = 0.6
@@ -612,6 +612,26 @@ def huge_block_break():
 
 
 # =============================================================================
+# Block impact flinch (the blocker's reaction when a hit lands on the guard)
+# =============================================================================
+
+def _block_hit(size: str, strong: list, grip: dict, jolt: float, length: float):
+    a = Anim(f"{size}BlockHit", length, priority="Action3", category=f"Objects/{size}",
+             description=f"{size} block takes a hit: guard jolts back and the feet slide, then re-sets. "
+                         f"Play over {size}Block (it starts and ends in the block pose).")
+    hit = add(strong, [T(pitch=-6 * jolt, z=-0.25 * jolt, y=-0.08 * jolt), H(pitch=-10 * jolt),
+                       RA(fwd=-8 * jolt, z=-0.12 * jolt), LA(fwd=-8 * jolt, z=-0.12 * jolt),
+                       RL(fwd=-6 * jolt), LL(fwd=6 * jolt)])
+    a.k(0.0, *strong, e="out")
+    a.k(0.05, *hit, e="io")
+    a.k(0.05 + 0.4 * length, *blend(hit, strong, 0.6))
+    a.k(length, *strong)
+    a.mark(0.0, "Impact")
+    a.props = [prop(grip)]
+    a.fx = [(0.0, "block", "prop")]
+    a.preview_panels = FULL_PANELS
+    return a
+
 
 def build() -> List[Anim]:
     out = []
@@ -631,4 +651,8 @@ def build() -> List[Anim]:
     out += [huge_pickup(), huge_hold(), huge_throw(), _ub_variant(huge_throw, "HugeThrow_UB", fold=("turn", "pitch")),
             huge_swing(), _ub_variant(huge_swing, "HugeSwing_UB", fold=("turn", "pitch")), huge_swing_blocked(),
             huge_block(), huge_block(True), huge_block_break()]
+    out += [_block_hit("Small", S_BLOCK_STRONG, SMALL_GRIP, 1.0, 0.4),
+            _block_hit("Medium", M_BLOCK_STRONG, MEDIUM_GRIP, 1.3, 0.5),
+            _block_hit("Large", L_BLOCK_STRONG, dict(LARGE_GRIP, offset=(0, 1.0, 0)), 1.6, 0.6),
+            _block_hit("Huge", HU_BLOCK_STRONG, dict(HUGE_GRIP, align="torso", offset=(0, 0.2, -2.3), rot=(0, 0, 0)), 1.8, 0.75)]
     return out
