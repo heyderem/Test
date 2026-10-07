@@ -576,34 +576,41 @@ def render_gif(b: Baked, out_path: Optional[str], panels: List[dict], panel=(300
                 out.append((spec.kind, m))
         return out
 
-    # --- framing: one bounding sphere over every panel and the whole clip ---
-    pts = []
+    # --- framing: bounding sphere over the whole clip (character only for
+    # panels with frame="char", character + objects otherwise) ---
     sample_ts = frame_ts[:: max(1, len(frame_ts) // 24)] + [frame_ts[-1]]
+    char_pts, all_pts = [], []
     for pn in panels:
         for t in sample_ts:
             parts = parts_at(pn, t)
             for name in ("Torso", "Head", "Right Arm", "Left Arm", "Right Leg", "Left Leg"):
                 m = parts[name]
                 for c in _CORNERS * np.array(PART_SIZE[name], float):
-                    pts.append(m[:3, 3] + m[:3, :3] @ c)
+                    p = m[:3, 3] + m[:3, :3] @ c
+                    char_pts.append(p)
+                    all_pts.append(p)
             for spec in a.props:
                 if spec.release is None or t < spec.release:
                     m = prop_world(spec, parts, t, pn["_rs"].get(id(spec)), pn["_rest"].get(id(spec)))
                     for lm, size, _ in prop_boxes(spec.kind):
                         wm = m @ lm
                         for c in _CORNERS * np.array(size, float):
-                            pts.append(wm[:3, 3] + wm[:3, :3] @ c)
-    pts = np.array(pts)
-    if ground_y >= pts[:, 1].min() - 0.8:
-        pts = np.vstack([pts, [[pts[:, 0].mean(), ground_y, pts[:, 2].mean()]]])
-    lo, hi = pts.min(0), pts.max(0)
-    center = (lo + hi) / 2
-    radius = max(3.3, float(np.max(np.linalg.norm(pts - center, axis=1))) + 0.4)
-    zoom = a.preview_zoom if hasattr(a, "preview_zoom") else 1.0
-    radius *= zoom
+                            all_pts.append(wm[:3, 3] + wm[:3, :3] @ c)
 
+    def sphere(pts, min_r):
+        pts = np.array(pts)
+        if ground_y >= pts[:, 1].min() - 0.8:
+            pts = np.vstack([pts, [[pts[:, 0].mean(), ground_y, pts[:, 2].mean()]]])
+        lo, hi = pts.min(0), pts.max(0)
+        c = (lo + hi) / 2
+        r = max(min_r, float(np.max(np.linalg.norm(pts - c, axis=1))) + 0.4)
+        return c, r
+
+    zoom = a.preview_zoom if hasattr(a, "preview_zoom") else 1.0
+    framing = {"char": sphere(char_pts, 3.3), "all": sphere(all_pts, 3.3)}
     for pn in panels:
-        pn["_cam"] = make_camera(pn["view"], center, radius, W * ss, H * ss)
+        center, radius = framing["char" if pn.get("frame") == "char" else "all"]
+        pn["_cam"] = make_camera(pn["view"], center, radius * zoom, W * ss, H * ss)
         pn["_scene"] = Scene(pn["_cam"], ground_y)
 
     def where_pos(where, parts, pw):
@@ -662,6 +669,8 @@ def render_gif(b: Baked, out_path: Optional[str], panels: List[dict], panel=(300
                     fx_now.append((ev[1], pn["_fx"][ev], age))
             scroll = pn.get("scroll", 0.0) * t
             scen = scenery_boxes(a.preview_scenery, t)
+            if pn.get("frame") == "char" and not pn.get("show_props", False):
+                pw = []   # character close-up: hide the (huge) object so the body reads
             tiles += render_frame([pn["_scene"]], [pn["_cam"]], parts, pw, fx_now, W, H, ss, scroll, scen)
         canvas = Image.new("RGB", (W * len(tiles) + 4 * (len(tiles) - 1), H + header + footer), (24, 26, 32))
         for i, tile in enumerate(tiles):

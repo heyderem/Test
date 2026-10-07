@@ -1,7 +1,7 @@
 # R6 Movement & Object-Combat Animations
 
-77 R6 animations in one style. The set includes remakes of the moves in your reference video
-(*Ironpeak Movement System V6*), plus:
+79 R6 animations in one style. The set includes remakes of the moves in your two reference videos
+(*Ironpeak Movement System V6* and the *Movement system SHOWCASE*), plus:
 
 - walk, sprint, jump and landing
 - slide and ledge climb
@@ -9,15 +9,18 @@
 - a pickup / hold / throw / swing / block set for **four object sizes**
 
 **[ANIMATIONS.md](ANIMATIONS.md) has a GIF preview of every animation.** Each GIF is rendered on a
-classic R6 rig from the exact keyframes in the export files.
+standard R6 rig (round head, classic face) from the exact keyframes in the export files, with no
+effects. **[comparisons/](comparisons/)** has side-by-side GIFs of the reference videos next to the
+remakes (sprint, walk, crouch walk, rolls, slide, hit flinch).
 
 ```
 animations/
-  AnimSaves_ALL.rbxmx             <- all 77 KeyframeSequences in one Model named "AnimSaves"
+  AnimSaves_ALL.rbxmx             <- all 79 KeyframeSequences in one Model named "AnimSaves"
   R6Animations_ByCategory.rbxmx   <- same, sorted into folders
   Movement/ Combat/ HitReactions/ Objects/{Small,Medium,Large,Huge}/   <- one .rbxmx per animation
   manifest.json                   <- name, length, priority, loop, joints, markers for each
 previews/                         <- one GIF per animation
+comparisons/                      <- reference video vs remake, side by side
 examples/AnimationLayering.client.lua   <- sprint + swing/block layering, block weakening, block break
 source/                           <- the generator (python3 source/build.py rebuilds everything)
 ```
@@ -42,7 +45,7 @@ Every animation already has its **Priority** and **Looped** settings, plus named
 
 | Group | Animations |
 |---|---|
-| **Movement** (video remakes) | Idle, Walk, Sprint, CrouchIdle, CrouchWalk, Jump, Fall, Land, LandHeavy, LandRoll, Roll, SlideStart → Slide (loop) → SlideEnd, LedgeHang, LedgeClimb, WallClimb, WallRunRight / WallRunLeft, WallJump, Vault |
+| **Movement** (video remakes) | Idle, Walk, Sprint, CrouchIdle, CrouchWalk, Jump, Fall, Land, LandHeavy, LandRoll, Roll, SlideStart → Slide (loop) → SlideEnd, LedgeHang, LedgeClimb, WallClimb, WallRunEnterRight / WallRunEnterLeft → WallRunRight / WallRunLeft, WallJump, Vault |
 | **Hit reactions** | HitReact (the flinch from the video), HitHeavy |
 | **Combat** | Punch1-4 (4-hit combo, Punch4 is a launcher), Kick, HeavyPunch (charged), PunchBlocked, plus Punch1-3 `_UB` |
 | **Objects** ×4 sizes | `{Size}Pickup`, `{Size}Hold` (loop), `{Size}Throw` + `_UB`, `{Size}Swing` + `_UB`, `{Size}SwingBlocked`, `{Size}Block` + `_UB`, `{Size}BlockHit`, `{Size}BlockBreak` |
@@ -54,7 +57,12 @@ How each object size feels:
 | **Small** | rock, can, brick, bottle | One hand, light flick throw, quick smack |
 | **Medium** | crate, barrel, chair, sign | One hand overhead, pitcher-style throw with knee lift, overhead smash |
 | **Large** | car, boulder, dumpster | Two hands overhead, arch-back heave, ground-slam swing |
-| **Huge** | train car, plane, bus (2-3× your height) | Wide two-hand titan lift, deep dip-and-launch throw, sweeping bat swing |
+| **Huge** | train car, plane, bus (2-3× your height) | Wide two-hand titan lift, deep dip-and-launch throw, wide horizontal sweep at chest height |
+
+All of them follow the same style rules taken from the videos: arms flare away from the body, the
+chest is never square (it leans, rolls and twists into every move; the sprint's shoulders tilt about
+15° each stride, measured from the showcase video), contacts snap in 2-3 frames then hold, and the
+head and arms lag a little behind the body and settle. Feet are kept on the floor automatically.
 
 ## Using them while sprinting (layering)
 
@@ -88,12 +96,13 @@ Two notes:
 
 ## Blocks that weaken and break
 
-- `{Size}Block` / `{Size}Block_UB` are **4 seconds** long. They start strong, then the guard
-  trembles harder, sags and gets pushed back.
+- `{Size}Block` / `{Size}Block_UB` are **4 seconds** long and hand-keyed in stages: the guard slams
+  up and holds solid (breathing) until 1.8 s, gives once and re-braces, gives again with a foot
+  sliding back at 2.65 s, shakes harder and harder, then buckles at the end.
 - For a 3-5 second block, use `track:AdjustSpeed(4 / blockSeconds)`.
-- Markers along the way: `Raised` (0.16 s), `Weakening`, `Critical`, `Exhausted` (just before the
-  end). Play `{Size}BlockBreak` on `Exhausted`, or whenever your own block-health logic says it
-  breaks.
+- Markers: `Raised` (0.1 s), `Weakening` (1.85 s, first give), `Critical` (3.0 s, hard shaking),
+  `Exhausted` (3.95 s). Play `{Size}BlockBreak` on `Exhausted`, or whenever your own block-health
+  logic says it breaks.
 - `{Size}BlockHit` is the flinch when a hit lands on your guard. It starts and ends in the block
   pose, so play it on top of the block.
 - `{Size}SwingBlocked` / `PunchBlocked` are for the **attacker** when their hit lands on a block.
@@ -104,19 +113,22 @@ for any object of that size class.
 
 ## Attaching objects to the hands
 
-The animations don't include the object. Weld it to the **Right Arm** (`Part0 = Right Arm`,
-`Part1 = object`, `C1 = CFrame.identity`). `h` is half your object's height along the arm.
+The animations don't include the object. Every animation in a size class uses the **same grip**, so
+one weld per object works for the pickup, hold, throw, swing and block. Weld the object to the
+**Right Arm** (`Part0 = Right Arm`, `Part1 = object`, `C1 = CFrame.identity`). `h` is the distance
+from the hand(s) to the object's centre (about half its height).
 
 | Size | `Weld.C0` |
 |---|---|
 | Small (1 hand) | `CFrame.new(0, -1 - h, 0)` |
 | Medium (1 hand) | `CFrame.new(0, -1 - h, 0)` |
-| Large (2 hands) | `CFrame.new(-1.85, -0.39, 0) * CFrame.Angles(0, 0, math.rad(-18)) * CFrame.new(0, -h, 0)` |
-| Huge (2 hands) | `CFrame.new(-1.9, 0.02, 0) * CFrame.Angles(0, 0, math.rad(-28)) * CFrame.new(0, -h, 0)` |
+| Large (2 hands) | `CFrame.new(-1.84, -0.40, 0) * CFrame.Angles(math.pi, 0, math.rad(18)) * CFrame.new(0, h, 0)` |
+| Huge (2 hands) | `CFrame.new(-1.89, 0.01, 0) * CFrame.Angles(math.pi, 0, math.rad(28)) * CFrame.new(0, h, 0)` |
 
-The two-hand offsets put the object between both hands in the Hold pose. That's where the GIFs show
-it. Turn a large/huge object 90° around Y if it should sit lengthwise. Unweld it on the `Release`
-marker and give it velocity.
+The two-hand grips put the object centred between both hands, upright when it's held overhead
+(that's where the GIFs show it). Turn a large/huge object 90° around Y if it should sit lengthwise.
+Weld on the `Grab` marker (for Large/Huge, tween the weld in over the lift), unweld on `Release` and
+give the object velocity.
 
 ## Markers → sound effects
 

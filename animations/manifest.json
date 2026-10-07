@@ -16,12 +16,12 @@
   ],
   "markers": [],
   "keyframes": 3,
-  "description": "Relaxed breathing idle, arms hanging slightly away from the body like the video."
+  "description": "Relaxed breathing idle: arms hang a little away from the body (V1 38.5 s, V2 0.0 s)."
  },
  {
   "name": "Walk",
   "category": "Movement",
-  "length": 0.8,
+  "length": 1.0,
   "loop": true,
   "priority": "Movement",
   "upperBodyOnly": false,
@@ -39,17 +39,17 @@
     "name": "Footstep"
    },
    {
-    "time": 0.4,
+    "time": 0.5,
     "name": "Footstep"
    }
   ],
-  "keyframes": 19,
-  "description": "Walk cycle (0.8 s). Play speed = WalkSpeed / 16."
+  "keyframes": 25,
+  "description": "Walk cycle matched to V2 (30-frame cycle): arms swing with a slight outward flare, small shoulder counter-twist. AdjustSpeed(speed / 16)."
  },
  {
   "name": "Sprint",
   "category": "Movement",
-  "length": 0.56,
+  "length": 0.567,
   "loop": true,
   "priority": "Movement",
   "upperBodyOnly": false,
@@ -63,16 +63,16 @@
   ],
   "markers": [
    {
-    "time": 0.02,
+    "time": 0.0,
     "name": "Footstep"
    },
    {
-    "time": 0.3,
+    "time": 0.283,
     "name": "Footstep"
    }
   ],
   "keyframes": 19,
-  "description": "Big arm-pumping sprint with forward lean (0.56 s cycle). Back arm flares out like the video."
+  "description": "Ironpeak-style sprint: arms hold back/front and snap across, back arm flared wide, high back-kick (17-frame cycle). AdjustSpeed(speed / 26)."
  },
  {
   "name": "CrouchIdle",
@@ -91,7 +91,7 @@
   ],
   "markers": [],
   "keyframes": 3,
-  "description": "Low crouch, head down, arms hanging forward (video crouch)."
+  "description": "Low crouch, one leg forward, arms hanging forward and out (V1 31.3 s)."
  },
  {
   "name": "CrouchWalk",
@@ -118,13 +118,13 @@
     "name": "Footstep"
    }
   ],
-  "keyframes": 23,
-  "description": "Crouched waddle (1.0 s cycle). Play speed = crouch WalkSpeed / 8."
+  "keyframes": 21,
+  "description": "Crouched sneak (V2 21.2 s, V1 27.5 s): low, legs splayed, arms hanging out to the sides and swaying (1.0 s cycle). AdjustSpeed(speed / 8)."
  },
  {
   "name": "Jump",
   "category": "Movement",
-  "length": 0.45,
+  "length": 0.4,
   "loop": false,
   "priority": "Movement",
   "upperBodyOnly": false,
@@ -142,8 +142,8 @@
     "name": "Jump"
    }
   ],
-  "keyframes": 12,
-  "description": "Take-off: arms whip up and out, knee drives up. Holds into Fall."
+  "keyframes": 11,
+  "description": "Take-off: dip, then the arms whip up and spread like wings while a knee drives up (V1 5.2 s). Holds into Fall."
  },
  {
   "name": "Fall",
@@ -161,8 +161,8 @@
    "Left Hip"
   ],
   "markers": [],
-  "keyframes": 16,
-  "description": "Free-fall: arms raised up and out, legs paddling (video fall pose)."
+  "keyframes": 12,
+  "description": "Free-fall: arms straight out to the sides with a slow flap, legs paddling (V1 10.0 s)."
  },
  {
   "name": "Land",
@@ -185,8 +185,8 @@
     "name": "Land"
    }
   ],
-  "keyframes": 12,
-  "description": "Normal landing: quick knee-dip absorb, arms out for balance."
+  "keyframes": 15,
+  "description": "Normal landing: quick knee-dip absorb, arms dropping from wings to balance."
  },
  {
   "name": "LandHeavy",
@@ -209,13 +209,13 @@
     "name": "Impact"
    }
   ],
-  "keyframes": 18,
-  "description": "Superhero landing from a big drop: fist to the floor, then rise."
+  "keyframes": 27,
+  "description": "Superhero landing from a big drop: fist to the floor, wings arm out, then rise."
  },
  {
   "name": "LandRoll",
   "category": "Movement",
-  "length": 0.86,
+  "length": 0.82,
   "loop": false,
   "priority": "Action",
   "upperBodyOnly": false,
@@ -233,17 +233,17 @@
     "name": "Land"
    },
    {
-    "time": 0.15,
+    "time": 0.13,
     "name": "Roll"
    }
   ],
-  "keyframes": 27,
-  "description": "Landing from a high fall into a forward roll, then straight into a run (video)."
+  "keyframes": 26,
+  "description": "Landing from a high fall straight into a forward roll, up into a run (V1 11.0 s)."
  },
  {
   "name": "Roll",
   "category": "Movement",
-  "length": 0.78,
+  "length": 0.76,
   "loop": false,
   "priority": "Action",
   "upperBodyOnly": false,
@@ -257,7 +257,7 @@
   ],
   "markers": [
    {
-    "time": 0.09,
+    "time": 0.12,
     "name": "Roll"
    },
    {
@@ -265,13 +265,13 @@
     "name": "Recover"
    }
   ],
-  "keyframes": 22,
-  "description": "Dodge / forward shoulder roll from the video (arms spread as you come up)."
+  "keyframes": 23,
+  "description": "Dodge roll from a run: dive, over the head with the arms spread wide, up running (V1 22.0 s, 52.0 s)."
  },
  {
   "name": "SlideStart",
   "category": "Movement",
-  "length": 0.26,
+  "length": 0.22,
   "loop": false,
   "priority": "Action",
   "upperBodyOnly": false,
@@ -289,8 +289,8 @@
     "name": "Slide"
    }
   ],
-  "keyframes": 10,
-  "description": "Drop from a sprint into the feet-first slide. Chain into Slide (loop)."
+  "keyframes": 9,
+  "description": "Drop from a sprint into the slide (3 frames to the floor like the video). Chain into Slide."
  },
  {
   "name": "Slide",
@@ -308,8 +308,8 @@
    "Left Hip"
   ],
   "markers": [],
-  "keyframes": 4,
-  "description": "Feet-first slide hold with a little ground shake (video slide pose)."
+  "keyframes": 5,
+  "description": "Feet-first slide hold, arms spread out flat to the sides, small ground judder."
  },
  {
   "name": "SlideEnd",
@@ -333,7 +333,7 @@
    }
   ],
   "keyframes": 14,
-  "description": "Pop back up out of the slide into a run."
+  "description": "Pop back up out of the slide straight into a run (V1 0.9 s)."
  },
  {
   "name": "LedgeHang",
@@ -357,7 +357,7 @@
  {
   "name": "LedgeClimb",
   "category": "Movement",
-  "length": 0.75,
+  "length": 0.7,
   "loop": false,
   "priority": "Action",
   "upperBodyOnly": false,
@@ -375,16 +375,16 @@
     "name": "Grab"
    },
    {
-    "time": 0.25,
+    "time": 0.2,
     "name": "Push"
    },
    {
-    "time": 0.55,
+    "time": 0.5,
     "name": "Land"
    }
   ],
-  "keyframes": 25,
-  "description": "Pull-up and mantle over a ledge; arms fly out wide at the top (video climb). Tween the HumanoidRootPart up/forward ~0.05-0.5 s while it plays."
+  "keyframes": 21,
+  "description": "Mantle over a ledge: pull, pitch forward over the edge with the arms flung wide, knees tucked, land running (V1 2.6 s, 14.1 s, 15.3 s). Move the root up/forward during 0.04-0.45 s."
  },
  {
   "name": "WallClimb",
@@ -411,8 +411,8 @@
     "name": "Step"
    }
   ],
-  "keyframes": 15,
-  "description": "Running straight up a wall: alternating high reaches and knee drives (video climb)."
+  "keyframes": 14,
+  "description": "Running straight up a wall: arms reach up and out in turn, knees drive (V1 2.2 s, 13.5 s)."
  },
  {
   "name": "WallRunRight",
@@ -440,7 +440,7 @@
    }
   ],
   "keyframes": 17,
-  "description": "Wall run with the wall on the right: body tilts away so the feet press the wall, outer arm pumps wide (video wall run)."
+  "description": "Wall run with the wall on the right: body tilts off the wall, both arms flared out and pumping, legs running (V1 4.8 s, 7.5 s)."
  },
  {
   "name": "WallRunLeft",
@@ -468,7 +468,55 @@
    }
   ],
   "keyframes": 17,
-  "description": "Wall run with the wall on the left: body tilts away so the feet press the wall, outer arm pumps wide (video wall run)."
+  "description": "Wall run with the wall on the left: body tilts off the wall, both arms flared out and pumping, legs running (V1 4.8 s, 7.5 s)."
+ },
+ {
+  "name": "WallRunEnterRight",
+  "category": "Movement",
+  "length": 0.32,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.22,
+    "name": "Attach"
+   }
+  ],
+  "keyframes": 12,
+  "description": "Tucked spin onto the wall (right), straight into the wall run (V1 4.5 s and 7.05 s)."
+ },
+ {
+  "name": "WallRunEnterLeft",
+  "category": "Movement",
+  "length": 0.32,
+  "loop": false,
+  "priority": "Action",
+  "upperBodyOnly": false,
+  "joints": [
+   "RootJoint",
+   "Neck",
+   "Right Shoulder",
+   "Left Shoulder",
+   "Right Hip",
+   "Left Hip"
+  ],
+  "markers": [
+   {
+    "time": 0.22,
+    "name": "Attach"
+   }
+  ],
+  "keyframes": 12,
+  "description": "Tucked spin onto the wall (left), straight into the wall run (V1 4.5 s and 7.05 s)."
  },
  {
   "name": "WallJump",
@@ -491,13 +539,13 @@
     "name": "Kick"
    }
   ],
-  "keyframes": 16,
-  "description": "Tuck against the wall then explode off it (video wall kick)."
+  "keyframes": 15,
+  "description": "Tuck against the wall, kick off, arms flung out into the wings pose (V1 5.2 s)."
  },
  {
   "name": "Vault",
   "category": "Movement",
-  "length": 0.62,
+  "length": 0.56,
   "loop": false,
   "priority": "Action",
   "upperBodyOnly": false,
@@ -511,21 +559,21 @@
   ],
   "markers": [
    {
-    "time": 0.1,
+    "time": 0.18,
     "name": "Plant"
    },
    {
-    "time": 0.48,
+    "time": 0.44,
     "name": "Land"
    }
   ],
-  "keyframes": 21,
-  "description": "Speed vault over a waist-high wall: left hand plants, legs swing through to the side (video vault). Move the root up ~1.5 studs and forward while it plays."
+  "keyframes": 20,
+  "description": "Kong vault over a waist-high wall: dive, hands plant, knees tuck through, land running (V1 4.3 s, 6.9 s). Move the root up ~1.5 studs and forward while it plays."
  },
  {
   "name": "HitReact",
   "category": "Hit Reactions",
-  "length": 0.5,
+  "length": 0.6,
   "loop": false,
   "priority": "Action3",
   "upperBodyOnly": false,
@@ -543,8 +591,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 13,
-  "description": "Light hit flinch from the video: arms jolt up and out, head snaps back."
+  "keyframes": 18,
+  "description": "Light hit flinch (V1 36.0 s, 38.0 s): head snaps back, arms jolt up in front, hold a beat, then lower."
  },
  {
   "name": "HitHeavy",
@@ -571,8 +619,8 @@
     "name": "Stumble"
    }
   ],
-  "keyframes": 21,
-  "description": "Heavy hit: knocked back, stumbling steps, hunched recovery."
+  "keyframes": 27,
+  "description": "Heavy hit: knocked back with the arms flung out, stumbling steps, hunched recovery."
  },
  {
   "name": "Punch1",
@@ -600,7 +648,7 @@
    }
   ],
   "keyframes": 13,
-  "description": "Combo hit 1 - quick lead-hand jab."
+  "description": "Combo hit 1: lead-hand jab, chest snaps round and the left shoulder drives forward."
  },
  {
   "name": "Punch2",
@@ -627,8 +675,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 12,
-  "description": "Combo hit 2 - rear-hand cross with hip turn."
+  "keyframes": 15,
+  "description": "Combo hit 2: rear cross, full hip and chest turn, right shoulder rolls through."
  },
  {
   "name": "Punch3",
@@ -655,8 +703,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 14,
-  "description": "Combo hit 3 - wide lead hook."
+  "keyframes": 17,
+  "description": "Combo hit 3: wide lead hook, chest coils back then whips through."
  },
  {
   "name": "Punch4",
@@ -683,8 +731,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 20,
-  "description": "Combo finisher - dipping rising uppercut (launcher)."
+  "keyframes": 22,
+  "description": "Combo finisher: dip with the chest rolled over the right hip, then a rising uppercut that rolls the body the other way (launcher)."
  },
  {
   "name": "Kick",
@@ -711,8 +759,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 23,
-  "description": "Spinning-hip roundhouse kick."
+  "keyframes": 24,
+  "description": "Roundhouse kick: chest leans well away from the kicking leg and turns through."
  },
  {
   "name": "HeavyPunch",
@@ -743,8 +791,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 29,
-  "description": "Charged heavy punch: deep wind-up, lunging step, big follow-through."
+  "keyframes": 33,
+  "description": "Charged heavy punch: chest coils right and rolls back, lunging step, the whole body rolls into a long follow-through."
  },
  {
   "name": "PunchBlocked",
@@ -767,8 +815,8 @@
     "name": "Blocked"
    }
   ],
-  "keyframes": 15,
-  "description": "Your punch/kick hits a block: fist knocked back, recoil half-step, guard back up."
+  "keyframes": 16,
+  "description": "Your punch/kick hits a block: fist knocked back, chest twisted open, recoil half-step, guard back up."
  },
  {
   "name": "Punch1_UB",
@@ -817,7 +865,7 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 13,
+  "keyframes": 15,
   "description": "Upper-body-only version of Punch2: plays on top of Walk/Sprint (legs keep running)."
  },
  {
@@ -842,7 +890,7 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 16,
+  "keyframes": 17,
   "description": "Upper-body-only version of Punch3: plays on top of Walk/Sprint (legs keep running)."
  },
  {
@@ -866,8 +914,8 @@
     "name": "Grab"
    }
   ],
-  "keyframes": 16,
-  "description": "Quick one-hand scoop of a small object."
+  "keyframes": 17,
+  "description": "Quick one-hand scoop: dip and reach with the right shoulder rolled down."
  },
  {
   "name": "SmallHold",
@@ -908,8 +956,8 @@
     "name": "Release"
    }
   ],
-  "keyframes": 16,
-  "description": "Light one-hand flick throw."
+  "keyframes": 17,
+  "description": "Light one-hand flick throw: chest opens right, then snaps round with the right shoulder rolling through."
  },
  {
   "name": "SmallThrow_UB",
@@ -933,8 +981,8 @@
     "name": "Release"
    }
   ],
-  "keyframes": 16,
-  "description": "Light one-hand flick throw. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 17,
+  "description": "Light one-hand flick throw: chest opens right, then snaps round with the right shoulder rolling through. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "SmallSwing",
@@ -962,7 +1010,7 @@
    }
   ],
   "keyframes": 16,
-  "description": "Fast overhand smack with a small object."
+  "description": "Fast overhand smack: arm cocks up behind the head, chest whips down and round."
  },
  {
   "name": "SmallSwing_UB",
@@ -987,7 +1035,7 @@
    }
   ],
   "keyframes": 16,
-  "description": "Fast overhand smack with a small object. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "description": "Fast overhand smack: arm cocks up behind the head, chest whips down and round. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "SmallSwingBlocked",
@@ -1010,8 +1058,8 @@
     "name": "Blocked"
    }
   ],
-  "keyframes": 15,
-  "description": "Small-object hit bounces off a block: arm knocked back, half-step back."
+  "keyframes": 16,
+  "description": "Small-object hit bounces off a block: arm knocked up and back, chest twisted open, half-step back."
  },
  {
   "name": "SmallBlock",
@@ -1030,15 +1078,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1046,8 +1094,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 36,
-  "description": "Forearm guard with the small object across the face; trembles and sags over 4 s."
+  "keyframes": 68,
+  "description": "Forearm guard with the small object up by the face, chest turned side-on. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s)."
  },
  {
   "name": "SmallBlock_UB",
@@ -1063,15 +1111,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1079,8 +1127,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 43,
-  "description": "Forearm guard with the small object across the face; trembles and sags over 4 s. Upper-body only: plays over Walk/Sprint."
+  "keyframes": 68,
+  "description": "Forearm guard with the small object up by the face, chest turned side-on. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s). Upper-body only: plays over Walk/Sprint."
  },
  {
   "name": "SmallBlockBreak",
@@ -1103,8 +1151,8 @@
     "name": "Break"
    }
   ],
-  "keyframes": 22,
-  "description": "Guard knocked wide open, stumble back."
+  "keyframes": 24,
+  "description": "Guard knocked wide open, chest flung back and twisted, stumble back."
  },
  {
   "name": "MediumPickup",
@@ -1127,8 +1175,8 @@
     "name": "Grab"
    }
   ],
-  "keyframes": 22,
-  "description": "Bend, grab the object one-handed and swing it up overhead."
+  "keyframes": 24,
+  "description": "Bend with the right shoulder dropped, grab one-handed and swing it up overhead."
  },
  {
   "name": "MediumHold",
@@ -1170,7 +1218,7 @@
    }
   ],
   "keyframes": 29,
-  "description": "Pitcher-style one-hand throw: knee lift, big stride, whip release."
+  "description": "Pitcher-style one-hand throw: chest coils away and arches back over a knee lift, then whips round and crunches down through the release."
  },
  {
   "name": "MediumThrow_UB",
@@ -1195,7 +1243,7 @@
    }
   ],
   "keyframes": 29,
-  "description": "Pitcher-style one-hand throw: knee lift, big stride, whip release. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "description": "Pitcher-style one-hand throw: chest coils away and arches back over a knee lift, then whips round and crunches down through the release. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "MediumSwing",
@@ -1222,8 +1270,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 24,
-  "description": "One-handed overhead smash with the object."
+  "keyframes": 27,
+  "description": "One-handed overhead smash: rise and lean back with the chest open, then crash down with the body rolled over the swinging arm."
  },
  {
   "name": "MediumSwing_UB",
@@ -1247,8 +1295,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 25,
-  "description": "One-handed overhead smash with the object. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 27,
+  "description": "One-handed overhead smash: rise and lean back with the chest open, then crash down with the body rolled over the swinging arm. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "MediumSwingBlocked",
@@ -1271,8 +1319,8 @@
     "name": "Blocked"
    }
   ],
-  "keyframes": 13,
-  "description": "Medium smash slams into a block and rebounds overhead; stagger back."
+  "keyframes": 20,
+  "description": "Medium smash slams into a block and rebounds overhead; chest thrown back and open, stagger."
  },
  {
   "name": "MediumBlock",
@@ -1291,15 +1339,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1307,8 +1355,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 40,
-  "description": "Object held out front as a shield, off-hand bracing; trembles, sags and gets pushed back over 4 s."
+  "keyframes": 69,
+  "description": "Object held out front as a shield with the off hand bracing, chest turned behind it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s)."
  },
  {
   "name": "MediumBlock_UB",
@@ -1324,15 +1372,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1340,8 +1388,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 41,
-  "description": "Object held out front as a shield, off-hand bracing; trembles, sags and gets pushed back over 4 s. Upper-body only: plays over Walk/Sprint."
+  "keyframes": 66,
+  "description": "Object held out front as a shield with the off hand bracing, chest turned behind it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s). Upper-body only: plays over Walk/Sprint."
  },
  {
   "name": "MediumBlockBreak",
@@ -1364,8 +1412,8 @@
     "name": "Break"
    }
   ],
-  "keyframes": 23,
-  "description": "Shield-object knocked up and away, big stumble back."
+  "keyframes": 28,
+  "description": "Shield-object knocked up and away, chest flung open, big stumble back."
  },
  {
   "name": "LargePickup",
@@ -1392,8 +1440,8 @@
     "name": "Settle"
    }
   ],
-  "keyframes": 29,
-  "description": "Deep squat, grip underneath, explosive two-hand lift to overhead."
+  "keyframes": 32,
+  "description": "Deep squat, grip underneath, a strained beat, then an explosive two-hand lift that arches the chest back under it."
  },
  {
   "name": "LargeHold",
@@ -1407,8 +1455,8 @@
    "Left Shoulder"
   ],
   "markers": [],
-  "keyframes": 10,
-  "description": "Large object held overhead with both arms, straining. Arms only, so legs/torso come from Idle/Walk/Sprint."
+  "keyframes": 5,
+  "description": "Large object held overhead with both arms, a slow straining sway. Arms only, so the legs and torso come from Idle/Walk/Sprint."
  },
  {
   "name": "LargeThrow",
@@ -1435,8 +1483,8 @@
     "name": "Release"
    }
   ],
-  "keyframes": 28,
-  "description": "Two-hand overhead heave: arch back, step and launch with full-body follow-through."
+  "keyframes": 31,
+  "description": "Two-hand overhead heave: arch way back, step in, launch, and fold the chest down through a long follow-through."
  },
  {
   "name": "LargeThrow_UB",
@@ -1460,8 +1508,8 @@
     "name": "Release"
    }
   ],
-  "keyframes": 22,
-  "description": "Two-hand overhead heave: arch back, step and launch with full-body follow-through. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 27,
+  "description": "Two-hand overhead heave: arch way back, step in, launch, and fold the chest down through a long follow-through. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "LargeSwing",
@@ -1488,8 +1536,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 25,
-  "description": "Two-handed overhead slam: rise, arch back, crash it into the ground."
+  "keyframes": 28,
+  "description": "Two-handed overhead slam: rise up on the toes and arch back, then crash it into the ground with the chest folded over it."
  },
  {
   "name": "LargeSwing_UB",
@@ -1513,8 +1561,8 @@
     "name": "Hit"
    }
   ],
-  "keyframes": 24,
-  "description": "Two-handed overhead slam: rise, arch back, crash it into the ground. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 28,
+  "description": "Two-handed overhead slam: rise up on the toes and arch back, then crash it into the ground with the chest folded over it. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "LargeSwingBlocked",
@@ -1537,8 +1585,8 @@
     "name": "Blocked"
    }
   ],
-  "keyframes": 15,
-  "description": "Slam stopped by a block: object bounces back overhead, heavy stagger."
+  "keyframes": 26,
+  "description": "Slam stopped by a block: object bounces back overhead, chest thrown back and tilted, heavy stagger."
  },
  {
   "name": "LargeBlock",
@@ -1557,15 +1605,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1573,8 +1621,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 35,
-  "description": "Object braced in front as a wall with both arms; pushed back, buckling and shaking over 4 s."
+  "keyframes": 67,
+  "description": "Object braced in front as a wall with both arms, chest leaning into it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s)."
  },
  {
   "name": "LargeBlock_UB",
@@ -1590,15 +1638,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1606,8 +1654,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 37,
-  "description": "Object braced in front as a wall with both arms; pushed back, buckling and shaking over 4 s. Upper-body only: plays over Walk/Sprint."
+  "keyframes": 67,
+  "description": "Object braced in front as a wall with both arms, chest leaning into it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s). Upper-body only: plays over Walk/Sprint."
  },
  {
   "name": "LargeBlockBreak",
@@ -1630,8 +1678,8 @@
     "name": "Break"
    }
   ],
-  "keyframes": 22,
-  "description": "The weight crushes the guard: buckle down to a knee, then heave back up."
+  "keyframes": 29,
+  "description": "The weight crushes the guard: buckle down to a knee with the chest twisted under it, shake, then heave it back up."
  },
  {
   "name": "HugePickup",
@@ -1662,8 +1710,8 @@
     "name": "Settle"
    }
   ],
-  "keyframes": 38,
-  "description": "Titan lift: squat under it, strain, then explode it up overhead."
+  "keyframes": 43,
+  "description": "Titan lift: squat under it, strain with the chest rocking, then explode it up overhead."
  },
  {
   "name": "HugeHold",
@@ -1677,8 +1725,8 @@
    "Left Shoulder"
   ],
   "markers": [],
-  "keyframes": 12,
-  "description": "Train/plane balanced overhead, arms wide, slow heavy wobble. Arms only."
+  "keyframes": 7,
+  "description": "Train/plane balanced overhead, arms wide, slow heavy see-saw wobble. Arms only."
  },
  {
   "name": "HugeThrow",
@@ -1705,8 +1753,8 @@
     "name": "Release"
    }
   ],
-  "keyframes": 29,
-  "description": "Deep dip, arch and full-body launch of a vehicle-sized object."
+  "keyframes": 34,
+  "description": "Deep dip, a huge arch back, then a full-body launch with the chest folding down after it."
  },
  {
   "name": "HugeThrow_UB",
@@ -1730,13 +1778,13 @@
     "name": "Release"
    }
   ],
-  "keyframes": 25,
-  "description": "Deep dip, arch and full-body launch of a vehicle-sized object. Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 27,
+  "description": "Deep dip, a huge arch back, then a full-body launch with the chest folding down after it. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "HugeSwing",
   "category": "Objects/Huge",
-  "length": 1.7,
+  "length": 1.6,
   "loop": false,
   "priority": "Action2",
   "upperBodyOnly": false,
@@ -1750,21 +1798,21 @@
   ],
   "markers": [
    {
-    "time": 0.5,
+    "time": 0.46,
     "name": "Swing"
    },
    {
-    "time": 0.68,
+    "time": 0.64,
     "name": "Hit"
    }
   ],
-  "keyframes": 40,
-  "description": "Grab it by one end and sweep it like a giant bat (wide horizontal arc)."
+  "keyframes": 45,
+  "description": "Bring it down to chest height, coil the chest right, then sweep it through a wide horizontal arc like a giant plank, rolling the body over the follow-through."
  },
  {
   "name": "HugeSwing_UB",
   "category": "Objects/Huge",
-  "length": 1.7,
+  "length": 1.6,
   "loop": false,
   "priority": "Action2",
   "upperBodyOnly": true,
@@ -1775,16 +1823,16 @@
   ],
   "markers": [
    {
-    "time": 0.5,
+    "time": 0.46,
     "name": "Swing"
    },
    {
-    "time": 0.68,
+    "time": 0.64,
     "name": "Hit"
    }
   ],
-  "keyframes": 52,
-  "description": "Grab it by one end and sweep it like a giant bat (wide horizontal arc). Upper-body only: plays over Walk/Sprint, legs keep running."
+  "keyframes": 49,
+  "description": "Bring it down to chest height, coil the chest right, then sweep it through a wide horizontal arc like a giant plank, rolling the body over the follow-through. Upper-body only: plays over Walk/Sprint, legs keep running."
  },
  {
   "name": "HugeSwingBlocked",
@@ -1807,8 +1855,8 @@
     "name": "Blocked"
    }
   ],
-  "keyframes": 19,
-  "description": "The sweep is stopped dead by a block; the recoil spins you back and you stagger."
+  "keyframes": 33,
+  "description": "The sweep is stopped dead by a block; the recoil twists the chest back the other way and you stagger."
  },
  {
   "name": "HugeBlock",
@@ -1827,15 +1875,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1843,8 +1891,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 35,
-  "description": "Vehicle held up in front like a wall, legs wide; driven back and buckling over 4 s."
+  "keyframes": 66,
+  "description": "Vehicle held up in front like a wall, legs wide, chest driven into it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s)."
  },
  {
   "name": "HugeBlock_UB",
@@ -1860,15 +1908,15 @@
   ],
   "markers": [
    {
-    "time": 0.16,
+    "time": 0.1,
     "name": "Raised"
    },
    {
-    "time": 1.6,
+    "time": 1.85,
     "name": "Weakening"
    },
    {
-    "time": 3.12,
+    "time": 3.0,
     "name": "Critical"
    },
    {
@@ -1876,8 +1924,8 @@
     "name": "Exhausted"
    }
   ],
-  "keyframes": 36,
-  "description": "Vehicle held up in front like a wall, legs wide; driven back and buckling over 4 s. Upper-body only: plays over Walk/Sprint."
+  "keyframes": 64,
+  "description": "Vehicle held up in front like a wall, legs wide, chest driven into it. Solid for ~1.8 s, gives twice, shakes, then buckles at 4 s (AdjustSpeed(4 / seconds) for 3-5 s). Upper-body only: plays over Walk/Sprint."
  },
  {
   "name": "HugeBlockBreak",
@@ -1900,8 +1948,8 @@
     "name": "Break"
    }
   ],
-  "keyframes": 26,
-  "description": "Crushed under the weight: driven down low, shaking, then a last-second heave back up."
+  "keyframes": 35,
+  "description": "Crushed under the weight: driven down low with the chest twisted, shaking, then a last-second heave back up."
  },
  {
   "name": "SmallBlockHit",
@@ -1924,8 +1972,8 @@
     "name": "Impact"
    }
   ],
-  "keyframes": 9,
-  "description": "Small block takes a hit: guard jolts back and the feet slide, then re-sets. Play over SmallBlock (it starts and ends in the block pose)."
+  "keyframes": 8,
+  "description": "Small block takes a hit: guard and chest knocked back and twisted, feet slide, then re-set. Play over SmallBlock (starts and ends in the block pose)."
  },
  {
   "name": "MediumBlockHit",
@@ -1948,8 +1996,8 @@
     "name": "Impact"
    }
   ],
-  "keyframes": 9,
-  "description": "Medium block takes a hit: guard jolts back and the feet slide, then re-sets. Play over MediumBlock (it starts and ends in the block pose)."
+  "keyframes": 12,
+  "description": "Medium block takes a hit: guard and chest knocked back and twisted, feet slide, then re-set. Play over MediumBlock (starts and ends in the block pose)."
  },
  {
   "name": "LargeBlockHit",
@@ -1972,8 +2020,8 @@
     "name": "Impact"
    }
   ],
-  "keyframes": 9,
-  "description": "Large block takes a hit: guard jolts back and the feet slide, then re-sets. Play over LargeBlock (it starts and ends in the block pose)."
+  "keyframes": 12,
+  "description": "Large block takes a hit: guard and chest knocked back and twisted, feet slide, then re-set. Play over LargeBlock (starts and ends in the block pose)."
  },
  {
   "name": "HugeBlockHit",
@@ -1996,7 +2044,7 @@
     "name": "Impact"
    }
   ],
-  "keyframes": 9,
-  "description": "Huge block takes a hit: guard jolts back and the feet slide, then re-sets. Play over HugeBlock (it starts and ends in the block pose)."
+  "keyframes": 13,
+  "description": "Huge block takes a hit: guard and chest knocked back and twisted, feet slide, then re-set. Play over HugeBlock (starts and ends in the block pose)."
  }
 ]

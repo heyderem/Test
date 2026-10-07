@@ -22,11 +22,11 @@ def clip(name, **kw):
 
 # --- V1 (Ironpeak V6) -------------------------------------------------------
 clip("Sprint_v1", anim="Sprint", video="v1", t0=19.55, t1=20.55, crop=(590, 490, 180, 170),
-     az=180, el=30, fov=55, anim_t0=0.0, speed=1.0, radius=2.5, scroll=0.0)
+     az=180, el=30, dist=28, anim_t0=0.0, speed=1.0)
 
 # --- V2 (showcase) ------------------------------------------------------------
-clip("Sprint_v2", anim="Sprint", video="v2", t0=18.15, t1=19.05, crop=(500, 330, 200, 190),
-     az=180, el=24, dist=11, anim_t0=0.0, speed=1.0)
+clip("Sprint_v2", anim="Sprint", video="v2", t0=18.15, t1=19.05, crop=(530, 320, 220, 210),
+     az=180, el=30, dist=17, anim_t0=0.0, speed=0.85)
 clip("Walk_v2", anim="Walk", video="v2", t0=2.0, t1=3.0, crop=(460, 300, 260, 260),
      az=180, el=30, dist=13, anim_t0=0.5, speed=1.0)
 clip("CrouchWalk_v2", anim="CrouchWalk", video="v2", t0=21.2, t1=22.2, crop=(500, 320, 280, 230),

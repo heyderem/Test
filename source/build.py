@@ -85,8 +85,12 @@ def baked(name=None):
 
 def panels_for(a, bk):
     out = []
-    for view, base, scroll, label in a.preview_panels or [("front", None, 0, ""), ("side", None, 0, "")]:
-        out.append(dict(view=view, base=bk[base] if base else None, scroll=scroll, label=label))
+    for spec in a.preview_panels or [("front", None, 0, ""), ("side", None, 0, "")]:
+        view, base, scroll, label = spec[:4]
+        d = dict(view=view, base=bk[base] if base else None, scroll=scroll, label=label)
+        if len(spec) > 4:
+            d.update(spec[4])
+        out.append(d)
     return out
 
 

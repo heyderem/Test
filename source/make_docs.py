@@ -7,7 +7,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ORDER = ["Movement", "Hit Reactions", "Combat", "Objects/Small", "Objects/Medium", "Objects/Large", "Objects/Huge"]
 INTRO = {
-    "Movement": "Remakes of the movement in your reference video, plus walk / jump / landing / ledge pieces in the same style.",
+    "Movement": "Remakes of the moves in the two reference videos, plus jump / landing / ledge pieces in the same style.",
     "Hit Reactions": "Getting hit (the flinch from the video and a heavier knock-back).",
     "Combat": "Unarmed attacks. `_UB` = upper body only (plays on top of Walk/Sprint).",
     "Objects/Small": "Rocks, cans, bricks... **one hand, light and quick.**",
@@ -24,9 +24,11 @@ def main():
     for a in manifest:
         by_cat.setdefault(a["category"], []).append(a)
     lines = ["# Animation previews", "",
-             "Every GIF is rendered from the exact keyframes in the `.rbxmx` files on a classic R6 rig. "
-             "Objects, sparks and dust are preview-only (they are not part of the animation). "
-             "Blue ticks on the timeline are markers; the banner shows a marker as it fires.", "",
+             "Every GIF is rendered from the exact keyframes in the `.rbxmx` files on a standard R6 rig "
+             "(round head, classic face). No effects are drawn. Objects, walls and ledges are only there to "
+             "show the motion; they are not part of the animation. Blue ticks on the timeline are markers. "
+             "For large and huge objects the first panel hides the object so the body is readable.", "",
+             "Side-by-side comparisons with the reference videos are in [comparisons/](comparisons/).", "",
              "Want something changed? Quote the animation name and what to change "
              "(e.g. *\"MediumThrow: bigger knee lift, release later\"*).", ""]
     lines.append("| Section | Animations |")

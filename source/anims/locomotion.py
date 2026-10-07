@@ -96,14 +96,17 @@ def sprint():
            (0.88, dict(fwd=50, out=3, twist=4))]
     cyc(a, RL, leg)
     cyc(a, LL, leg, shift=0.5)
-    cyc(a, T, [(0.06, dict(pitch=26, turn=7, roll=-2.5, y=-0.22)),
-               (0.30, dict(pitch=24, turn=0, roll=0, y=0.02)),
-               (0.56, dict(pitch=26, turn=-7, roll=2.5, y=-0.22)),
-               (0.80, dict(pitch=24, turn=0, roll=0, y=0.02))])
-    cyc(a, H, [(0.06, dict(pitch=-21, turn=-5, roll=1.5)),
-               (0.30, dict(pitch=-19, turn=0, roll=0)),
-               (0.56, dict(pitch=-21, turn=5, roll=-1.5)),
-               (0.80, dict(pitch=-19, turn=0, roll=0))])
+    # torso: measured from V2 18.2 s - the shoulder line tilts about +-15 degrees on screen each
+    # stride (dropping on the side of the arm that swings forward), with a 12 degree shoulder twist
+    # and a small sideways shift over the planted foot
+    cyc(a, T, [(0.04, dict(pitch=26, turn=12, roll=-20, x=0.1, y=-0.12)),
+               (0.29, dict(pitch=24, turn=0, roll=0, x=0.0, y=0.03)),
+               (0.54, dict(pitch=26, turn=-12, roll=20, x=-0.1, y=-0.12)),
+               (0.79, dict(pitch=24, turn=0, roll=0, x=0.0, y=0.03))])
+    cyc(a, H, [(0.04, dict(pitch=-21, turn=-8, roll=13)),
+               (0.29, dict(pitch=-19, turn=0, roll=0)),
+               (0.54, dict(pitch=-21, turn=8, roll=-13)),
+               (0.79, dict(pitch=-19, turn=0, roll=0))])
     a.mark(0.0, "Footstep")
     a.mark(round(L * 0.5, 4), "Footstep")
     a.preview_panels = [("back", None, 9.5, "behind"), ("side", None, 9.5, "")]
@@ -263,7 +266,7 @@ def land_roll():
 # slide (V1 0.4 s and 15.8 s): feet first, leaning back, arms spread flat
 # =============================================================================
 
-SLIDE = [T(pitch=-56, y=-1.5, roll=-5, turn=-8), H(pitch=44, turn=6, roll=3),
+SLIDE = [T(pitch=-56, y=-1.3, roll=-5, turn=-8), H(pitch=44, turn=6, roll=3),
          RA(fwd=-34, out=68, twist=10), LA(fwd=-26, out=64, twist=10),
          RL(fwd=96, out=4, twist=6), LL(fwd=80, out=16, twist=-8)]
 
